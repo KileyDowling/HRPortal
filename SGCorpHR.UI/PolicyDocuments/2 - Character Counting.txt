@@ -1,0 +1,12 @@
+Character Counting
+Difficulty: 2
+
+Make a program which asks the user to enter in a string and then prints out how many vowels are in that string. For example, the user enters “hello world” and it returns “There are 3 vowels in ‘hello world’”.
+
+Tips
+-------------------------------
+Strings are typically thought of and used as an array of characters. If you can loop through these characters one by one, you can compare them to a list of vowels. If you find one that matches, increment a counter variable. After the loop is done, the counter will then contain your count.
+
+Added Difficulty
+-------------------------------
+Count the consonants as well as spaces. Provide a mini report of all these counts.

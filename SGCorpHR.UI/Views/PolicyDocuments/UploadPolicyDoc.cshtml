@@ -1,0 +1,45 @@
+﻿@model SGCorpHR.UI.Models.CategoryVM
+@{
+    ViewBag.Title = "UploadPolicyDoc";
+}
+
+
+@using (Html.BeginForm("SavePolicyDocument", "PolicyDocuments", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <h1>Upload Policy Document</h1>
+    <div>
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.PolicyDocumentToAdd.Name)
+    </div>
+    <div>
+        <label>Upload File</label>
+        <input type="file" name="file" />
+    </div>
+    <div>
+        <label>Category</label>
+        @Html.DropDownListFor(m => m.PolicyDocumentToAdd.Category.CategoryName, Model.Categories)
+        
+        <input type="submit" name="Submit" value="Submit" />
+    </div>
+
+
+
+
+
+     @*<table>
+        <tr>
+            <td>File:</td>
+            <td>
+                <input type="file" name="file" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" name="Submit" value="Submit" />
+            </td>
+        </tr>
+    </table>*@
+}
+
+

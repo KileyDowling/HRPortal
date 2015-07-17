@@ -1,0 +1,3 @@
+﻿Name,Category,FilePath
+Female Professional,Dress Code,C:\github\DennisDrellishakJr\SGCorpHR\SGCorpHR.UI\PolicyDocuments\Business-Professional-Female
+Male Professional,Dress Code,C:\github\DennisDrellishakJr\SGCorpHR\SGCorpHR.UI\PolicyDocuments\Business-Professional-Male

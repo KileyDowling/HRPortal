@@ -1,0 +1,54 @@
+﻿ @using System.Web.UI.HtmlControls
+ @model SGCorpHR.Models.Response<List<SGCorpHR.Models.Resumes>>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+
+
+
+
+    @if (Model.Data != null)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        FileName
+                    </th>
+                   
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var file in Model.Data)
+                {
+                    <tr>
+                        <td>@file.FileName</td>
+
+                        <td>
+                            <form action="/Resumes/DownloadResume" method="Post">
+                                <input type="hidden" name="FilePath" id="FilePath" value="@file.FilePath"/>
+                                <button>Download</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/Resumes/DeleteResume" method="Post">
+                                <input type="hidden" name="FilePath" id="FilePath" value="@file.FilePath" />
+                                <button>Delete</button>
+                            </form>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    }
+    else
+    {
+        { <p>@Model.Message</p>}
+    }
+</div>

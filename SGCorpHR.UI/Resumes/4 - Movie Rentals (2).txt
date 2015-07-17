@@ -1,0 +1,13 @@
+Movie Rentals
+Difficulty: 4
+
+One of the most basic learning programs is to create a movie store. Create a program which allows the user to add to their inventory a bunch of movie items and information about those movies. Each movie will have a price based on if they are a classic or new release. They will also differ on the format DVD or Blu-Ray. If it is a classic, the price will be $2.25 and if it is a new release it will be $4.95. If it is also Blu-Ray, add an additional $1.50 to the price. Allow the user to then check out a movie and specify a return date. If not returned by the return date, an additional $1.00 is added for each day past.
+
+Tips
+-------------------------------
+The movie is a class. The store is a class. The store manages movie objects (adding new movies, retiring worn out movies) and how you do this is up to you. You could create a list of movies using an arraylist or vector or some other generic list. It will be this list of movie objects by which the user can select from. Once a movie is checked out, it is unavailable and a return
+date is put on it. When it is returned you compare the current date to the return date and if it is past, find out how many days it has been since expiring. Take the number of expired days and multiply it by $1.00. That will tell you how much the user owes in late fees.
+
+Added Difficulty
+-------------------------------
+Create a user account that will keep track of their late fees. If they have a late fee, prevent them from renting a movie until they pay it. Also you could add movie pictures to the movie class. You could also build into the managing class statistical information like the total worth of the inventory and how many copies of each movie the store has on hand.

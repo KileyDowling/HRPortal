@@ -1,0 +1,55 @@
+﻿@model SGCorpHR.UI.Models.CategoryVM
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>View Policy Documents</h2><br/>
+<h3>Category: @Html.DisplayTextFor(m => m.Category.CategoryName)</h3>
+
+<div>
+
+
+    @if (Model.Response.Data != null)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>File Path</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var policyDoc in Model.Response.Data)
+                {
+                    <tr>
+                        <td>@policyDoc.Name</td>
+
+                        <td>
+                            <form action="/Home/DownloadPolicyDoc" method="Post">
+                                <input type="hidden" name="FilePath" id="FilePath" value="@policyDoc.FilePath" />
+                                <button>Download</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/Home/DeletePolicyDoc" method="Post">
+                                @Html.HiddenFor(m => m.Category.CategoryName)
+
+                                <input type="hidden" name="FilePath" id="FilePath" value="@policyDoc.FilePath"/>
+                                <button>Delete</button>
+                            </form>
+                        </td>
+
+                   </tr>
+                }
+            </tbody>
+
+        </table>
+    }
+    else
+    {
+        { <p>@Model.Response.Message</p>}
+    }
+</div>
+

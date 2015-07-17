@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("SaveFile", "Resumes", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <h1>Upload Resume</h1>
+    <table>
+        <tr>
+            <td>File:</td>
+            <td>
+                <input type="file" name="file" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" name="Submit" value="Submit" />
+            </td>
+        </tr>
+    </table>
+}

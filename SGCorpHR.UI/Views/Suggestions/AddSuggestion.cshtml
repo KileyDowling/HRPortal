@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Suggestion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddSuggestion</h2>
+
+<div>
+    @using (Html.BeginForm("AddSuggestionForm", "Suggestions", FormMethod.Post))
+    {
+        <div class="form-group">
+            
+            <label>Name</label>
+            <input type="text" class="form-control" name="EmployeeName"/>
+
+        </div>
+        <div class="form-group">
+            <label>Suggestion</label>
+            <input type="text" class="form-control" name="SuggestionText"/>
+
+        </div>
+        <button class="btn btn-primary">Submit</button>
+        <p>@ViewBag.Message</p>
+    }
+</div>
+

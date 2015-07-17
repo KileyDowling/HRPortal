@@ -1,0 +1,19 @@
+Phone Letter Combinations
+Difficulty: 3
+
+Given a digit string, return all possible letter combinations that the number could represent in a phone number.  On a typical phone:
+
+2 - ABC
+3 - DEF
+4 - GHI
+5 - JKL
+6 - MNO
+7 - PQRS
+8 - TUV
+9 - WXYZ
+
+So given "23" you should output AD, AE, AF, BD, BE, BF, CD, CE, CF
+
+Tips
+-------------------------------
+Figure out how to do a permutation in C#.  Recursion is oftenttimes good at this.

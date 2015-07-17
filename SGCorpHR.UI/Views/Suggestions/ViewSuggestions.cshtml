@@ -1,0 +1,52 @@
+﻿@using System.Web.UI.HtmlControls
+@model SGCorpHR.Models.Response<List<SGCorpHR.Models.Suggestion>>
+@{
+    ViewBag.Title = "ViewSuggestions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewSuggestions</h2>
+
+<div>
+
+
+
+
+    @if (Model.Data != null)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Employee Name
+                    </th>
+                    <th>Suggestion</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var suggestion in Model.Data)
+                {
+                    <tr>
+                        <td>@suggestion.EmployeeName</td>
+                        <td>@suggestion.SuggestionText</td>
+                        <td>
+                            <form action="/Suggestions/DeleteSuggestion" method="Post">
+                                <input type="hidden" name="SuggestionID" id="SuggestionID" value="@suggestion.SuggestionID"/>
+                                <button>Delete</button>
+                            </form>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    }
+    else
+    {
+        { <p>@Model.Message</p>}
+    }
+</div>
+
