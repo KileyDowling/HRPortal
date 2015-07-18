@@ -7,16 +7,20 @@
 
 @using (Html.BeginForm("SubmitTimeSheet", "TimeTracker", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
+    @Html.ValidationSummary(false)
     <div>
         <p><label>Employee</label>
-    @Html.DropDownListFor(m => m.SelectedEmployee.EmpID, Model.EmployeeInfo) </P>
+            @Html.DropDownListFor(m => m.SelectedEmployee.EmpID, Model.EmployeeInfo)    
+        </P>
+
 
         <p>
             <label>Date</label>
             @Html.EditorFor(m => m.NewTimesheet.DateOfTimesheet)
         </p>
 
-    <p> <label>Hours Worked</label>
+        <p> <label>Hours Worked</label>
+        @Html.ValidationMessageFor(m=>m.NewTimesheet.TotalHoursByDay)
         @Html.TextBoxFor(m => m.NewTimesheet.TotalHoursByDay)</p>
 
         <input type="submit" name="Submit" value="Submit" />

@@ -26,6 +26,7 @@ namespace SGCorpHR.UI.Controllers
         public ActionResult SubmitTimeSheet(TimeTrackerVM model)
         {
             var ops = new TimeTrackerOperations();
+            model.NewTimesheet.EmpId = model.SelectedEmployee.EmpID;
             ops.SubmitTimeSheet(model.NewTimesheet);
 
             return RedirectToAction("TimeTrackerSummary", new {empId = model.NewTimesheet.EmpId});

@@ -12,10 +12,13 @@ namespace SGCorpHR.Models
     {
         public int TimesheetId { get; set; }
 
+        [Required(ErrorMessage = "You must enter a date for this timesheet")]
         [DataType(DataType.Date)]
         public DateTime DateOfTimesheet { get; set; }
 
+        [Range(typeof(decimal), "1","16", ErrorMessage = "You can only submit a maximum of 16 hours")]
         public decimal TotalHoursByDay { get; set; }
+
         public int EmpId { get; set; }
 
         public string FormattedDateOfTimesheet

@@ -18,13 +18,13 @@ namespace SGCorpHR.TEST
             var repo = new TimeTrackerRepository();
             var timesheet = new Timesheet()
             {
-                DateOfTimesheet = new DateTime(1989, 07, 01),
+                DateOfTimesheet = new DateTime(1989, 02, 01),
                 EmpId = 1,
-                TotalHoursByDay = 12
+                TotalHoursByDay = 2
             };
             repo.SubmitNewTimeSheet(timesheet);
             List<Timesheet> listOfSheets = repo.GetAllTimeSheets(1);
-            Assert.AreEqual(5, listOfSheets.Count);
+            Assert.AreEqual(8, listOfSheets.Count);
         }
 
         [Test]

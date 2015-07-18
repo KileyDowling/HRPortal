@@ -23,7 +23,13 @@ namespace SGCorpHR.UI.Controllers
         {
             var fullPath = Server.MapPath(@"~/PolicyDocuments");
             var ops = new PolicyDocumentsOperations();
-            var model = new CategoryVM();
+            var model = new CategoryVM()
+            {
+                PolicyDocumentToAdd = new PolicyDocument()
+                {
+                    Category = new Category()
+                }
+            };
 
             var response = ops.GetAllCategories(fullPath);
 
@@ -33,9 +39,9 @@ namespace SGCorpHR.UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult SelectPolicyDocCategory(string categoryName)
+        public ActionResult SelectPolicyDocCategory(CategoryVM model)
         {
-            return RedirectToAction("ViewPolicyDocuments", new { nameOfCategory = categoryName });
+            return RedirectToAction("ViewPolicyDocuments", new { nameOfCategory = model.Category.CategoryName });
         }
 
         public ActionResult ViewPolicyDocuments(string nameOfCategory)

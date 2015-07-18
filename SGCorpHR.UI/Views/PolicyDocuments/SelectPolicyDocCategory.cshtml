@@ -12,7 +12,7 @@
     <h3>Submit a category name to view all related documents</h3><br/>
     <div>
         <label>Category Name</label>
-        @Html.DropDownListFor(m => m.PolicyDocumentToAdd.Category.CategoryName, Model.Categories)
+        @Html.DropDownListFor(m => m.Category.CategoryName, Model.Categories)
         <input type="submit" name="Submit" value="Submit" />
     </div>
 
