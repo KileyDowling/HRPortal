@@ -21,7 +21,15 @@ namespace SGCorpHR.UI.Controllers
 
         public ActionResult SelectPolicyDocCategory()
         {
-            return View("SelectPolicyDocCategory");
+            var fullPath = Server.MapPath(@"~/PolicyDocuments");
+            var ops = new PolicyDocumentsOperations();
+            var model = new CategoryVM();
+
+            var response = ops.GetAllCategories(fullPath);
+
+            model.CreateCategoryList(response.Data);
+
+            return View(model);
         }
 
         [HttpPost]
@@ -37,13 +45,14 @@ namespace SGCorpHR.UI.Controllers
             var ops = new PolicyDocumentsOperations();
             var model = new CategoryVM()
             {
-                Response = ops.GetAllPolicyDocuments(filePath),
+                Response = ops.GetAllPolicyDocuments(filePath, nameOfCategory),
                 Category = new Category()
                 {
                     CategoryName = nameOfCategory
                 }
 
             };
+
 
             return View(model);
         }
@@ -88,10 +97,10 @@ namespace SGCorpHR.UI.Controllers
             return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }
 
-        public ActionResult DeletePolicyDoc(string filePath, CategoryVM model)
+        public ActionResult DeletePolicyDoc(string filePath, string categoryName)
         {
             System.IO.File.Delete(@filePath);
-            return RedirectToAction("ViewPolicyDocuments", new { category = model.Category });
+            return RedirectToAction("ViewPolicyDocuments", new { nameOfCategory = categoryName });
         }
     }
 }

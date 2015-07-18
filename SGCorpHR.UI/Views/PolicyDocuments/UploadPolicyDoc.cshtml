@@ -17,10 +17,14 @@
         <input type="file" name="file" />
     </div>
     <div>
-        <label>Category</label>
-        @Html.DropDownListFor(m => m.PolicyDocumentToAdd.Category.CategoryName, Model.Categories)
-        
+        <label>Enter a new or exisiting category</label>
+        @Html.TextBoxFor(m => m.PolicyDocumentToAdd.Category.CategoryName)
+        <br/>
+        @Html.ListBoxFor(m => m.PolicyDocumentToAdd.Category.CategoryName, Model.Categories)
         <input type="submit" name="Submit" value="Submit" />
+
+
+
     </div>
 
 

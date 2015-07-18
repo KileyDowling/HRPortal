@@ -10,32 +10,32 @@ namespace SGCorpHR.DATA
 {
     public class PolicyDocumentRepository
     { 
-        public List<PolicyDocument> GetAllPolicyDocuments(string folderPath)
+        public List<PolicyDocument> GetAllPolicyDocuments(string folderPath, string categoryName)
         {
             var directory = new DirectoryInfo(folderPath);
             if (directory.Exists)
             {
                 var files = directory.GetFiles();
+                List<PolicyDocument> policyDocuments = new List<PolicyDocument>();
                 if (files.Any())
                 {
-                    List<PolicyDocument> policyDocuments = new List<PolicyDocument>();
                     foreach (var file in files)
                     {
                         PolicyDocument policyDoc = new PolicyDocument();
                         policyDoc.FilePath = file.FullName;
                         policyDoc.Name = file.Name;
-                        policyDocuments.Add(policyDoc);
+                        policyDoc.Category = new Category()
+                        {
+                            CategoryName = categoryName
+                        };
+                    
+                    policyDocuments.Add(policyDoc);
                     }
-
-
-                    return policyDocuments;
-
                 }
+                return policyDocuments;
             }
             return null;
-
         }
-        
 
         public void AddNewPolicyDocument(PolicyDocument policyDoc, string folderPath)
         {

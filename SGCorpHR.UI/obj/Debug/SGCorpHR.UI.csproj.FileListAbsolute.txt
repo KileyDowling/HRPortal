@@ -1,4 +1,3 @@
-C:\Users\Apprentice\Desktop\GitHub\KileyDowling\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\obj\Debug\SGCorpHR.UI.csprojResolveAssemblyReference.cache
 C:\Users\Apprentice\Desktop\GitHub\KileyDowling\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\bin\Image\swg_logo-white.png
 C:\Users\Apprentice\Desktop\GitHub\KileyDowling\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\bin\Suggestions\Suggestions.txt
 C:\Users\Apprentice\Desktop\GitHub\KileyDowling\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\bin\SGCorpHR.UI.dll.config
@@ -33,5 +32,6 @@ C:\Users\Apprentice\Desktop\GitHub\KileyDowling\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\
 C:\Users\Apprentice\Desktop\GitHub\KileyDowling\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\bin\System.Web.Mvc.xml
 C:\Users\Apprentice\Desktop\GitHub\KileyDowling\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\bin\Dapper.pdb
 C:\Users\Apprentice\Desktop\GitHub\KileyDowling\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\bin\Dapper.xml
+C:\Users\Apprentice\Desktop\GitHub\KileyDowling\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\obj\Debug\SGCorpHR.UI.csprojResolveAssemblyReference.cache
 C:\Users\Apprentice\Desktop\GitHub\KileyDowling\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\obj\Debug\SGCorpHR.UI.dll
 C:\Users\Apprentice\Desktop\GitHub\KileyDowling\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\obj\Debug\SGCorpHR.UI.pdb

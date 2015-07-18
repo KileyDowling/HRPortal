@@ -1,4 +1,5 @@
-﻿
+﻿@model SGCorpHR.UI.Models.CategoryVM
+
 @{
     ViewBag.Title = "SelectPolicyDocCategory";
 }
@@ -11,7 +12,7 @@
     <h3>Submit a category name to view all related documents</h3><br/>
     <div>
         <label>Category Name</label>
-        <input type="text" name="categoryName"/>
+        @Html.DropDownListFor(m => m.PolicyDocumentToAdd.Category.CategoryName, Model.Categories)
         <input type="submit" name="Submit" value="Submit" />
     </div>
 

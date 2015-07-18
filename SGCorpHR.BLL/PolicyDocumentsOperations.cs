@@ -22,11 +22,11 @@ namespace SGCorpHR.BLL
             return response;
         }
 
-        public Response<List<PolicyDocument>> GetAllPolicyDocuments(string filePath)
+        public Response<List<PolicyDocument>> GetAllPolicyDocuments(string filePath, string categoryName)
         {
             var repo = new PolicyDocumentRepository();
             Response<List<PolicyDocument>> response = new Response<List<PolicyDocument>>();
-            List<PolicyDocument> policyDocs = repo.GetAllPolicyDocuments(filePath);
+            List<PolicyDocument> policyDocs = repo.GetAllPolicyDocuments(filePath, categoryName);
             try
             {
                 if (policyDocs != null)

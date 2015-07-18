@@ -1,0 +1,18 @@
+﻿@model SGCorpHR.UI.Models.TimeTrackerVM
+@{
+    ViewBag.Title = "SelectEmpToView";
+}
+
+@using (Html.BeginForm("SelectEmpToView", "TimeTracker", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    <h3>Please Select Employee</h3>
+
+    <div>
+        <label>Employee</label>
+        @Html.DropDownListFor(m => m.SelectedEmployee.EmpID, Model.EmployeeInfo)
+
+        <input type="submit" name="Submit" value="Submit" />
+    </div>
+}
+
+

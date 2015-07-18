@@ -12,5 +12,18 @@ namespace SGCorpHR.Models
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public DateTime? HireDate { get; set; }
+
+        public string FormattedHireDate
+        {
+            get
+            {
+                string returnVal = "";
+                if (HireDate != null)
+                {
+                    returnVal = HireDate.Value.ToShortDateString();
+                }
+                return returnVal;
+            }
+        }
     }
 }

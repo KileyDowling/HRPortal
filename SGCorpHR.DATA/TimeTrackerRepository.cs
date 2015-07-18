@@ -39,6 +39,26 @@ namespace SGCorpHR.DATA
                  return
                     cn.Query<Employee>("SELECT * FROM Employee").ToList();
             }
-        } 
+        }
+
+        public int TotalHoursWorked(int employeeId)
+        {
+            using (var cn = new SqlConnection(Settings.ConnectionString))
+            {
+                var p = new DynamicParameters();
+                p.Add("employeeID", employeeId);
+
+                return cn.Query<int>("TotalHoursWorked", p, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            }
+        }
+
+        public void DeleteTimesheet(int empTimesheetId)
+        {
+            using (var cn = new SqlConnection(Settings.ConnectionString))
+            {
+                cn.Query("DELETE Timesheet Where TimesheetId = @timesheetId", new {timesheetId = empTimesheetId});
+            }
+        }
+
     }
 }

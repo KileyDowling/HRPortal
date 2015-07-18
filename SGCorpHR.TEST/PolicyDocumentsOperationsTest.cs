@@ -27,7 +27,8 @@ namespace SGCorpHR.TEST
        {
            var ops = new PolicyDocumentsOperations();
            var filePath = @"C:\Users\Apprentice\Desktop\GitHub\KileyDowling\SGCorpHRV2\SGCorpHR\SGCorpHR.TEST\PolicyDocuments";
-           var response = ops.GetAllPolicyDocuments(filePath);
+               string categoryName = "DressCode";
+           var response = ops.GetAllPolicyDocuments(filePath, categoryName);
            Assert.IsTrue(response.Success);
        }
     }

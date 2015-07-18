@@ -1,0 +1,63 @@
+﻿@model SGCorpHR.Models.Response<SGCorpHR.Models.TimeTrackerSummary>
+@{
+    ViewBag.Title = "SelectedEmployeeSummary";
+}
+
+   <h3>Summary</h3>
+
+<div>
+
+    @Html.HiddenFor(m => m.Data.SelectedEmployee.EmpID, Model.Data.SelectedEmployee.EmpID)
+    <label>Employee ID</label>
+    <p>@Model.Data.SelectedEmployee.EmpID</p> <br/>
+
+    <label>Employee Name</label>
+    <p>@Model.Data.SelectedEmployee.FirstName @Model.Data.SelectedEmployee.LastName</p> <br/>
+
+    <label>Employee Hire Date</label>
+    <p>@Model.Data.SelectedEmployee.FormattedHireDate</p> <br/>
+
+    <label>Total Hours To Date</label>
+    <p>@Model.Data.TotalHoursWorked</p> <br/>
+</div>
+@if (Model.Data.AllTimesheets != null)
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Date
+            </th>
+            <th>
+                Total Hours Worked
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+
+        @foreach (var ts in Model.Data.AllTimesheets)
+        {
+            <tr>
+                <td>@ts.FormattedDateOfTimesheet</td>
+                <td>@ts.TotalHoursByDay</td>
+                <td>
+                    <form action="/TimeTracker/DeleteTimesheet" method="Post">
+                        <input type="hidden" name="TimesheetId" id="TimesheetId" value="@ts.TimesheetId"/>
+                        <input type="hidden" name="EmpId" id="EmpId" value="@ts.EmpId" />
+
+                        <button>Delete</button>
+                    </form>
+                </td>
+            </tr>
+
+        }
+
+        </tbody>
+    </table>
+}
+else
+{
+    { <p>@Model.Message</p>}
+}
+
+

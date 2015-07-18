@@ -12,23 +12,41 @@ namespace SGCorpHR.UI.Controllers
     public class TimeTrackerController : Controller
     {
         // GET: TimeTracker
-        public ActionResult TimeTracker()
+        public ActionResult SelectEmpToView()
         {
-        //    var ops = new PolicyDocumentsOperations();
-        //    var model = new CategoryVM();
-
-        //    var response = ops.GetAllCategories(fullPath);
-
-        //    model.CreateCategoryList(response.Data);
-
-        //    return View(model);
 
             var ops = new TimeTrackerOperations();
-            //var model = new TimeTrackerVM();
-            //List<Employee> employees = ops.
-            //model.EmployeeInfo
+            var model = new TimeTrackerVM();
+            Response<List<Employee>> employees = ops.GetAllEmployees();
 
-            return View();
+            model.DisplayEmployeeInformation(employees.Data);
+              
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult SelectEmpToView(TimeTrackerVM model)
+        {
+            return RedirectToAction("TimeTrackerSummary", new {empId = model.SelectedEmployee.EmpID});
+        }
+
+        public ActionResult TimeTrackerSummary(int empId)
+        {
+            TimeTrackerOperations ops = new TimeTrackerOperations();
+            Response<TimeTrackerSummary> response = new Response<TimeTrackerSummary>();
+            response = ops.GetTimeTrackerSummary(empId);
+
+            return View(response);
+
+        }
+
+        public ActionResult DeleteTimesheet(int TimesheetId, int EmpId )
+        {
+            TimeTrackerOperations ops = new TimeTrackerOperations();
+            ops.DeleteSingleTimesheet(TimesheetId);
+
+            return RedirectToAction("TimeTrackerSummary", new {empId = EmpId});
         }
     }
 }
