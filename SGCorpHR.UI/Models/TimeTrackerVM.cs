@@ -11,6 +11,7 @@ namespace SGCorpHR.UI.Models
     {
         public List<SelectListItem> EmployeeInfo { get; set; }
         public Employee SelectedEmployee { get; set; }
+        public Timesheet NewTimesheet { get; set; }
 
         public void DisplayEmployeeInformation(List<Employee> employees)
         {

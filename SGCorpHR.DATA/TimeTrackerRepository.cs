@@ -60,5 +60,18 @@ namespace SGCorpHR.DATA
             }
         }
 
+        public void SubmitNewTimeSheet(Timesheet timesheet)
+        {
+            using (var cn = new SqlConnection(Settings.ConnectionString))
+            {
+                var p = new DynamicParameters();
+                p.Add("dateOfSheet", timesheet.DateOfTimesheet);
+                p.Add("totalHrsThatDay", timesheet.TotalHoursByDay);
+                p.Add("empId", timesheet.EmpId);
+
+                cn.Query("SubmitNewTimeSheet", p, commandType: CommandType.StoredProcedure);
+            }
+        }
+
     }
 }

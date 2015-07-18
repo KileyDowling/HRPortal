@@ -41,5 +41,24 @@ namespace SGCorpHR.TEST
             List<Timesheet> listOfSheets = repo.GetAllTimeSheets(5);
             Assert.IsFalse(listOfSheets.Exists(p => p.TimesheetId == 15));
         }
+
+
+        [Test]
+        public void SubmitTimeSheetTest()
+        {
+            TimeTrackerOperations ops = new TimeTrackerOperations();
+            var timesheet = new Timesheet()
+            {
+                DateOfTimesheet = new DateTime(1989, 07, 01),
+                EmpId = 1,
+                TotalHoursByDay = 12
+            };
+            ops.SubmitTimeSheet(timesheet);
+
+            var repo = new TimeTrackerRepository();
+            List<Timesheet> listOfSheets = repo.GetAllTimeSheets(1);
+            Assert.AreEqual(6, listOfSheets.Count);
+
+        }
     }
 }

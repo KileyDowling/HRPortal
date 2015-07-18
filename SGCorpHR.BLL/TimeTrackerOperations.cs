@@ -82,6 +82,12 @@ namespace SGCorpHR.BLL
             TimeTrackerRepository repo = new TimeTrackerRepository();
             repo.DeleteTimesheet(timesheetId);
         }
+
+        public void SubmitTimeSheet(Timesheet timesheet)
+        {
+            TimeTrackerRepository repo = new TimeTrackerRepository();
+            repo.SubmitNewTimeSheet(timesheet);
+        }
     }
 
 }

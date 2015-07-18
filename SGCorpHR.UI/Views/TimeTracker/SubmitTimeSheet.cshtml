@@ -1,0 +1,24 @@
+﻿@model SGCorpHR.UI.Models.TimeTrackerVM
+@{
+    ViewBag.Title = "Submit Time Sheet";
+}
+
+<h3>Submit Time Sheet</h3>
+
+@using (Html.BeginForm("SubmitTimeSheet", "TimeTracker", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <p><label>Employee</label>
+    @Html.DropDownListFor(m => m.SelectedEmployee.EmpID, Model.EmployeeInfo) </P>
+
+        <p>
+            <label>Date</label>
+            @Html.EditorFor(m => m.NewTimesheet.DateOfTimesheet)
+        </p>
+
+    <p> <label>Hours Worked</label>
+        @Html.TextBoxFor(m => m.NewTimesheet.TotalHoursByDay)</p>
+
+        <input type="submit" name="Submit" value="Submit" />
+    </div>
+}

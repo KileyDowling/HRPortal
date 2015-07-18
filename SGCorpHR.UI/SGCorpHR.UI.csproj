@@ -149,6 +149,7 @@
     <Content Include="Views\PolicyDocuments\SelectPolicyDocCategory.cshtml" />
     <Content Include="Views\TimeTracker\SelectEmpToView.cshtml" />
     <Content Include="Views\TimeTracker\TimeTrackerSummary.cshtml" />
+    <Content Include="Views\TimeTracker\SubmitTimeSheet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

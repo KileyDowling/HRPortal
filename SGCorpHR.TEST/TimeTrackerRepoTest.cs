@@ -13,6 +13,21 @@ namespace SGCorpHR.TEST
     public class TimeTrackerRepoTest
     {
         [Test]
+        public void SubmitNewTimeSheet()
+        {
+            var repo = new TimeTrackerRepository();
+            var timesheet = new Timesheet()
+            {
+                DateOfTimesheet = new DateTime(1989, 07, 01),
+                EmpId = 1,
+                TotalHoursByDay = 12
+            };
+            repo.SubmitNewTimeSheet(timesheet);
+            List<Timesheet> listOfSheets = repo.GetAllTimeSheets(1);
+            Assert.AreEqual(5, listOfSheets.Count);
+        }
+
+        [Test]
         public void GetAllSheetsTest()
         {
             var repo = new TimeTrackerRepository();

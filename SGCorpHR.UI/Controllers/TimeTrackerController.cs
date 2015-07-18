@@ -11,8 +11,7 @@ namespace SGCorpHR.UI.Controllers
 {
     public class TimeTrackerController : Controller
     {
-        // GET: TimeTracker
-        public ActionResult SelectEmpToView()
+        public TimeTrackerVM GenerateEmployeeList()
         {
 
             var ops = new TimeTrackerOperations();
@@ -20,7 +19,28 @@ namespace SGCorpHR.UI.Controllers
             Response<List<Employee>> employees = ops.GetAllEmployees();
 
             model.DisplayEmployeeInformation(employees.Data);
-              
+            return model;
+        }
+
+        [HttpPost]
+        public ActionResult SubmitTimeSheet(TimeTrackerVM model)
+        {
+            var ops = new TimeTrackerOperations();
+            ops.SubmitTimeSheet(model.NewTimesheet);
+
+            return RedirectToAction("TimeTrackerSummary", new {empId = model.NewTimesheet.EmpId});
+        }
+
+        public ActionResult SubmitTimeSheet()
+        {
+            var model = GenerateEmployeeList();
+            return View(model);
+        }
+
+        // GET: TimeTracker
+        public ActionResult SelectEmpToView()
+        {
+            var model = GenerateEmployeeList();
 
             return View(model);
         }
