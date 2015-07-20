@@ -11,37 +11,48 @@ namespace SGCorpHR.UI.Controllers
 {
     public class TimeTrackerController : Controller
     {
-        public TimeTrackerVM GenerateEmployeeList()
+        public List<SelectListItem> GenerateEmployeeList()
         {
 
             var ops = new TimeTrackerOperations();
-            var model = new TimeTrackerVM();
+            List<SelectListItem> selectItemList = new List<SelectListItem>();
             Response<List<Employee>> employees = ops.GetAllEmployees();
-
+            var model = new TimeTrackerVM();
             model.DisplayEmployeeInformation(employees.Data);
-            return model;
+            selectItemList = model.EmployeeInfo;
+            return selectItemList;
         }
 
         [HttpPost]
         public ActionResult SubmitTimeSheet(TimeTrackerVM model)
         {
-            var ops = new TimeTrackerOperations();
-            model.NewTimesheet.EmpId = model.SelectedEmployee.EmpID;
-            ops.SubmitTimeSheet(model.NewTimesheet);
+            if (ModelState.IsValidField("NewTimesheet.TotalHoursByDay") && (DateTime.Now > model.NewTimesheet.DateOfTimesheet) && 
+                (model.NewTimesheet.DateOfTimesheet > new DateTime(2005,08,07)))
+            {
+                var ops = new TimeTrackerOperations();
+                model.NewTimesheet.EmpId = model.SelectedEmployee.EmpID;
+                ops.SubmitTimeSheet(model.NewTimesheet);
 
-            return RedirectToAction("TimeTrackerSummary", new {empId = model.NewTimesheet.EmpId});
+
+                return RedirectToAction("TimeTrackerSummary", new {empId = model.NewTimesheet.EmpId});
+            }
+            ModelState.AddModelError("NewTimesheet.DateOfTimesheet","That is an invalid date");
+            model.EmployeeInfo = GenerateEmployeeList();
+            return View(model);
         }
 
         public ActionResult SubmitTimeSheet()
         {
-            var model = GenerateEmployeeList();
+            var model = new TimeTrackerVM();
+            model.EmployeeInfo = GenerateEmployeeList();
             return View(model);
         }
 
         // GET: TimeTracker
         public ActionResult SelectEmpToView()
         {
-            var model = GenerateEmployeeList();
+            var model = new TimeTrackerVM();
+            model.EmployeeInfo = GenerateEmployeeList();
 
             return View(model);
         }
