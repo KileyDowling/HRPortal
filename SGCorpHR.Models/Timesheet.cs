@@ -32,5 +32,6 @@ namespace SGCorpHR.Models
                 return returnVal;
             }
         }
+        public int PtoRequestID { get; set; }
     }
 }

@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileOperations.cs" />
+    <Compile Include="PaidTimeOffOperations.cs" />
     <Compile Include="PolicyDocumentsOperations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuggestionOperations.cs" />

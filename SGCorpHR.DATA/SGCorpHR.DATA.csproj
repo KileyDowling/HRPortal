@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileRepository.cs" />
+    <Compile Include="PaidTimeOffRepository.cs" />
     <Compile Include="PolicyDocumentRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
