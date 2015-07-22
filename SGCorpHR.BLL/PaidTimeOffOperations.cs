@@ -5,11 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using SGCorpHR.DATA;
 using SGCorpHR.Models;
+using SGCorpHR.Models.Interfaces;
 
 namespace SGCorpHR.BLL
 {
     public class PaidTimeOffOperations
     {
+        private IPaidTimeOffRepository _ptoRepo;
+
+        public PaidTimeOffOperations(IPaidTimeOffRepository myRepo)
+        {
+            _ptoRepo = myRepo;
+        }
+
         public void SubmitPtoRequest(PaidTimeOff pto)
         {
             PaidTimeOffRepository repo = new PaidTimeOffRepository();
@@ -19,8 +27,7 @@ namespace SGCorpHR.BLL
         public Response<List<PaidTimeOff>> ViewAllPtoRequests()
         {
             Response<List<PaidTimeOff>> response = new Response<List<PaidTimeOff>>();
-            PaidTimeOffRepository repo = new PaidTimeOffRepository();
-            List<PaidTimeOff> ptoList = repo.ViewAllPtoRequests();
+            List<PaidTimeOff> ptoList = _ptoRepo.ViewAllPtoRequests();
 
             try
             {

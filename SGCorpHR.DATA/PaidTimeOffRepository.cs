@@ -7,10 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using SGCorpHR.Models;
+using SGCorpHR.Models.Interfaces;
 
 namespace SGCorpHR.DATA
 {
-    public class PaidTimeOffRepository
+    public class PaidTimeOffRepository : IPaidTimeOffRepository
     {
         public void SubmitPtoRequest(PaidTimeOff ptoRequest)
         {

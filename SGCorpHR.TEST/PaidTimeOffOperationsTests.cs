@@ -17,10 +17,10 @@ namespace SGCorpHR.TEST
         public void ViewAllPtoRequests()
         {
             Response<List<PaidTimeOff>> response = new Response<List<PaidTimeOff>>();
-            var ops = new PaidTimeOffOperations();
+            var ops = OperationsFactory.CreatePaidTimeOffOperations();
             response = ops.ViewAllPtoRequests();
             Assert.IsTrue(response.Success);
-            Assert.AreEqual(6, response.Data.Count);
+            Assert.AreEqual(2, response.Data.Count);
             
         }
     }

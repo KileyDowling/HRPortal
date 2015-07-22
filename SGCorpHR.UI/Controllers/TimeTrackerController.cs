@@ -83,7 +83,7 @@ namespace SGCorpHR.UI.Controllers
 
         public ActionResult ViewPtoRequests()
         {
-            PaidTimeOffOperations ops = new PaidTimeOffOperations();
+            PaidTimeOffOperations ops = OperationsFactory.CreatePaidTimeOffOperations();
             Response<List<PaidTimeOff>> response = new Response<List<PaidTimeOff>>();
             response = ops.ViewAllPtoRequests();
 
@@ -107,7 +107,7 @@ namespace SGCorpHR.UI.Controllers
            ptoRequest.HoursRequested = ptoVM.HoursRequested;
            ptoRequest.ManagerID = ptoVM.ManagerId;
 
-            var ops = new PaidTimeOffOperations();
+            var ops = OperationsFactory.CreatePaidTimeOffOperations();
             ops.SubmitPtoRequest(ptoRequest);
 
            return RedirectToAction("ViewPtoRequests");
