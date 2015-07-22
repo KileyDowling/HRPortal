@@ -18,11 +18,13 @@ namespace SGCorpHR.TEST
             PaidTimeOff pto = new PaidTimeOff()
             {
                 EmpID = 6,
-                Date = new DateTime(2015, 07, 16),
+                Date = new DateTime(2015, 07, 15),
                 HoursRequested = 4
             };
             PaidTimeOffRepository repo = new PaidTimeOffRepository();
             repo.SubmitPtoRequest(pto);
+            var ptoList = repo.ViewAllPtoRequests();
+            Assert.AreEqual(7, ptoList.Count);
         }
 
         [Test]

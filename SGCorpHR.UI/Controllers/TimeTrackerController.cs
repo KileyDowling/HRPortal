@@ -80,5 +80,41 @@ namespace SGCorpHR.UI.Controllers
 
             return RedirectToAction("TimeTrackerSummary", new {empId = EmpId});
         }
+
+        public ActionResult ViewPtoRequests()
+        {
+            PaidTimeOffOperations ops = new PaidTimeOffOperations();
+            Response<List<PaidTimeOff>> response = new Response<List<PaidTimeOff>>();
+            response = ops.ViewAllPtoRequests();
+
+            return View(response);
+        }
+
+        public ActionResult SubmitPtoRequest()
+        {
+            List<SelectListItem> employeeList = GenerateEmployeeList();
+            ViewBag.EmployeeList = employeeList;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SubmitPtoRequest(PaidTimeOffVM ptoVM)
+        {
+           var ptoRequest = new PaidTimeOff();
+           ptoRequest.EmpID = ptoVM.EmpId;
+           ptoRequest.Date = ptoVM.Date;
+           ptoRequest.HoursRequested = ptoVM.HoursRequested;
+           ptoRequest.ManagerID = ptoVM.ManagerId;
+
+            var ops = new PaidTimeOffOperations();
+            ops.SubmitPtoRequest(ptoRequest);
+
+           return RedirectToAction("ViewPtoRequests");
+        }
+
+    
+    
     }
+
 }

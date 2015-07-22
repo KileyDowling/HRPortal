@@ -1,0 +1,64 @@
+﻿@model SGCorpHR.Models.Response<List<SGCorpHR.Models.PaidTimeOff>>
+@{
+    ViewBag.Title = "ViewPtoRequests";
+}
+
+<h2>View Paid Time Off Requests</h2>
+
+@if (Model.Data != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Employee Id
+                </th>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Number of Hours Requested
+                </th>
+                <th>
+                    Approval Status
+                </th>
+                <th>
+                    Reason Rejected
+                </th>
+                <th>
+                    Manager ID
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var pto in Model.Data)
+            {
+                <tr>
+                    <td>@pto.EmpID</td>
+                    <td>@pto.Date.ToString("d")</td>
+                    <td>@pto.HoursRequested</td>
+                    <td>@pto.Status</td>
+                    <td>@pto.ReasonRejected</td>
+                    <td>@pto.ManagerID</td>
+                    
+                    <td>
+                        @*<form action="/TimeTracker/DeleteTimesheet" method="Post">
+                            <input type="hidden" name="TimesheetId" id="TimesheetId" value="@ts.TimesheetId" />
+                            <input type="hidden" name="EmpId" id="EmpId" value="@ts.EmpId" />
+
+                            <button>Edit</button>
+                        </form>*@
+                    </td>
+                </tr>
+
+            }
+
+        </tbody>
+    </table>
+}
+else
+{
+    { <p>@Model.Message</p>}
+}
+

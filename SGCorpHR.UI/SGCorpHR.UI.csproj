@@ -125,7 +125,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Attributes\HoursEnteredAttribute.cs" />
     <Compile Include="Models\CategoryVM.cs" />
+    <Compile Include="Models\PaidTimeOffVM.cs" />
     <Compile Include="Models\TimeTrackerVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\SuggestionsController.cs" />
@@ -150,6 +152,8 @@
     <Content Include="Views\TimeTracker\SelectEmpToView.cshtml" />
     <Content Include="Views\TimeTracker\TimeTrackerSummary.cshtml" />
     <Content Include="Views\TimeTracker\SubmitTimeSheet.cshtml" />
+    <Content Include="Views\TimeTracker\ViewPtoRequests.cshtml" />
+    <Content Include="Views\TimeTracker\SubmitPtoRequest.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -166,10 +170,6 @@
     <ProjectReference Include="..\SGCorpHR.BLL\SGCorpHR.BLL.csproj">
       <Project>{11c48355-a1a3-4f7f-a56d-e11e499bb27f}</Project>
       <Name>SGCorpHR.BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SGCorpHR.DATA\SGCorpHR.DATA.csproj">
-      <Project>{96d74412-f930-44c2-9c0e-1cf5d0afaf0d}</Project>
-      <Name>SGCorpHR.DATA</Name>
     </ProjectReference>
     <ProjectReference Include="..\SGCorpHR.Models\SGCorpHR.Models.csproj">
       <Project>{9d80515c-bd8c-4b65-a430-24db0b3204fe}</Project>

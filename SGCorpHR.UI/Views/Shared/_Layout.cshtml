@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    
+   
 
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -42,6 +45,8 @@
                         <ul class="dropdown-menu">
                             <li><a href="/TimeTracker/SelectEmpToView">View Timesheet</a></li>
                             <li><a href="/TimeTracker/SubmitTimeSheet">Submit Time</a></li>
+                            <li><a href="/TimeTracker/SubmitPtoRequest">Submit PTO Request</a></li>
+                            <li><a href="/TimeTracker/ViewPtoRequests">View PTO Requests</a></li>
 
                         </ul>
                     </li>
@@ -52,28 +57,29 @@
     </nav>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/Index">
-                    <img src="/Image/swg_logo-white.png" style="
-    width: 200px;
-">
-                </a>
-                @*@Html.ActionLink("SGCorp Resumes", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav"></ul>
-            </div>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/Index">
+                <img src="/Image/swg_logo-white.png" style="width: 200px;
+                                                                                                                     ">
+            </a>
+            @*@Html.ActionLink("SGCorp Resumes", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav"></ul>
         </div>
     </div>
+</div>
 
-    <div class="container body-content">
+
+
+<div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
@@ -82,6 +88,14 @@
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        $('nav').css('background-color', 'darkred');
+        $('a').css('color', 'white').click(''black');
+        $('li ul li a').css('color', 'black');
+    });
+</script>*@
 </body>
 </html>

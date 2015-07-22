@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using SGCorpHR.BLL;
 using SGCorpHR.Models;
-using SGCorpHR.DATA;
 using SGCorpHR.UI.Models;
 
 namespace SGCorpHR.UI.Controllers
