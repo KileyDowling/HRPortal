@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SGCorpHR.Models;
+using SGCorpHR.Models.Interfaces;
 
 namespace SGCorpHR.DATA
 {
-    public class SuggestionRepository
+    public class SuggestionRepository : ISuggestionRepository
     {
 
         public List<Suggestion> GetAllSuggestions(string filePath)

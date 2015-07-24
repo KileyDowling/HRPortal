@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="FileRepository.cs" />
     <Compile Include="Mocks\PtoMock.cs" />
+    <Compile Include="Mocks\SuggestionMock.cs" />
     <Compile Include="PaidTimeOffRepository.cs" />
     <Compile Include="PolicyDocumentRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

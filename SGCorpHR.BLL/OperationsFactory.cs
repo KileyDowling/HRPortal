@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using SGCorpHR.DATA;
 using SGCorpHR.DATA.Mocks;
+using SGCorpHR.Models;
 
 
 namespace SGCorpHR.BLL
@@ -21,6 +22,16 @@ namespace SGCorpHR.BLL
             else
             {
                 return new PaidTimeOffOperations(new PaidTimeOffRepository());
+            }
+        }
+
+        public static SuggestionOperations CreateSuggestionOperations()
+        {
+            if (mode == "Test")
+                return new SuggestionOperations(new SuggestionMock());
+            else
+            {
+                return new SuggestionOperations(new SuggestionRepository());
             }
         }
     }

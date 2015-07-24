@@ -43,6 +43,7 @@
     <Compile Include="Category.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Interfaces\IPaidTimeOffRepository.cs" />
+    <Compile Include="Interfaces\ISuggestionRepository.cs" />
     <Compile Include="PaidTimeOff.cs" />
     <Compile Include="PolicyDocument.cs" />
     <Compile Include="Resumes.cs" />

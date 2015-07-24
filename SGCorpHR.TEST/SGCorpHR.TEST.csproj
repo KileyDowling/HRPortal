@@ -49,6 +49,7 @@
     <Compile Include="PolicyDocumentsOperationsTest.cs" />
     <Compile Include="PolicyDocumentsRepoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuggestionOperationsTests.cs" />
     <Compile Include="SuggestionRepositoryTest.cs" />
     <Compile Include="TimeTrackerOpsTest.cs" />
     <Compile Include="TimeTrackerRepoTest.cs" />

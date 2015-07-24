@@ -22,7 +22,7 @@ namespace SGCorpHR.UI.Controllers
         public ActionResult AddSuggestionForm(Suggestion suggestion)
         {
             var filePath = Server.MapPath(@"~/Suggestions/Suggestions.txt");
-            var ops = new SuggestionOperations();
+            var ops = OperationsFactory.CreateSuggestionOperations();
             ops.AddSuggestion(suggestion, filePath);
 
             return View("ConfirmationPage");
@@ -31,7 +31,7 @@ namespace SGCorpHR.UI.Controllers
         public ActionResult ViewSuggestions()
         {
             var filePath = Server.MapPath(@"~/Suggestions/Suggestions.txt"); ;
-            var ops = new SuggestionOperations();
+            var ops = OperationsFactory.CreateSuggestionOperations();
             var response = ops.DisplaySuggestions(filePath);
             return View(response);
         }
@@ -39,7 +39,7 @@ namespace SGCorpHR.UI.Controllers
         public ActionResult DeleteSuggestion(int suggestionID)
         {
             var filePath = Server.MapPath(@"~/Suggestions/Suggestions.txt"); ;
-            var ops = new SuggestionOperations();
+            var ops = OperationsFactory.CreateSuggestionOperations();
             ops.DeleteSuggestions(suggestionID, filePath);
             return RedirectToAction("ViewSuggestions");
 

@@ -5,16 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using SGCorpHR.DATA;
 using SGCorpHR.Models;
+using SGCorpHR.Models.Interfaces;
 
 namespace SGCorpHR.BLL
 {
     public class SuggestionOperations
+
     {
+        private ISuggestionRepository _suggestionRepo;
+
+        public SuggestionOperations(ISuggestionRepository myRepo)
+        {
+            _suggestionRepo = myRepo;
+        }
+
         public Response<List<Suggestion>> DisplaySuggestions(string filePath)
         {
-            var repo = new SuggestionRepository();
+            
             var response = new Response<List<Suggestion>>();
-            var suggestions = repo.GetAllSuggestions(filePath);
+            var suggestions = _suggestionRepo.GetAllSuggestions(filePath);
             try
             {
                 if (suggestions.Count > 0)
