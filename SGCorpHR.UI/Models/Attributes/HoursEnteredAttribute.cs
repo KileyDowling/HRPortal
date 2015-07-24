@@ -6,11 +6,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SGCorpHR.UI.Models.Attributes
 {
-    public class HoursEnteredAttribute : RequiredAttribute
+    public class HoursEnteredAttribute : ValidationAttribute
     {
         public override bool IsValid(object value)
         {
-            return base.IsValid(value) && ((int)value == 4 || (int)value == 8);
+            return ((int)value == 4 || (int)value == 8);
         }
     }
 }

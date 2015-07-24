@@ -26,8 +26,9 @@ namespace SGCorpHR.UI.Controllers
         [HttpPost]
         public ActionResult SubmitTimeSheet(TimeTrackerVM model)
         {
-            if (ModelState.IsValidField("NewTimesheet.TotalHoursByDay") && (DateTime.Now > model.NewTimesheet.DateOfTimesheet) && 
-                (model.NewTimesheet.DateOfTimesheet > new DateTime(2005,08,07)))
+            if (ModelState.IsValidField("NewTimesheet.TotalHoursByDay") &&
+                (DateTime.Now > model.NewTimesheet.DateOfTimesheet) &&
+                (model.NewTimesheet.DateOfTimesheet > new DateTime(2005, 08, 07)))
             {
                 var ops = new TimeTrackerOperations();
                 model.NewTimesheet.EmpId = model.SelectedEmployee.EmpID;
@@ -36,7 +37,7 @@ namespace SGCorpHR.UI.Controllers
 
                 return RedirectToAction("TimeTrackerSummary", new {empId = model.NewTimesheet.EmpId});
             }
-            ModelState.AddModelError("NewTimesheet.DateOfTimesheet","That is an invalid date");
+            ModelState.AddModelError("NewTimesheet.DateOfTimesheet", "That is an invalid date");
             model.EmployeeInfo = GenerateEmployeeList();
             return View(model);
         }
@@ -73,7 +74,7 @@ namespace SGCorpHR.UI.Controllers
 
         }
 
-        public ActionResult DeleteTimesheet(int TimesheetId, int EmpId )
+        public ActionResult DeleteTimesheet(int TimesheetId, int EmpId)
         {
             TimeTrackerOperations ops = new TimeTrackerOperations();
             ops.DeleteSingleTimesheet(TimesheetId);
@@ -101,20 +102,30 @@ namespace SGCorpHR.UI.Controllers
         [HttpPost]
         public ActionResult SubmitPtoRequest(PaidTimeOffVM ptoVM)
         {
-           var ptoRequest = new PaidTimeOff();
-           ptoRequest.EmpID = ptoVM.EmpId;
-           ptoRequest.Date = ptoVM.Date;
-           ptoRequest.HoursRequested = ptoVM.HoursRequested;
-           ptoRequest.ManagerID = ptoVM.ManagerId;
+            if (ModelState.IsValidField("HoursRequested"))
+            {
+                var ptoRequest = new PaidTimeOff();
+                ptoRequest.EmpID = ptoVM.EmpId;
+                ptoRequest.Date = ptoVM.Date;
+                ptoRequest.HoursRequested = ptoVM.HoursRequested;
+                ptoRequest.ManagerID = ptoVM.ManagerId;
 
-            var ops = OperationsFactory.CreatePaidTimeOffOperations();
-            ops.SubmitPtoRequest(ptoRequest);
+                var ops = OperationsFactory.CreatePaidTimeOffOperations();
+                ops.SubmitPtoRequest(ptoRequest);
+            } 
+            else
+            {
+                return RedirectToAction("SubmitPtoRequest");
+            }
 
            return RedirectToAction("ViewPtoRequests");
         }
 
-    
-    
-    }
+        public ActionResult EditPtoRequest(int PtoRequestId)
+        {
+            return View();
+        }
 
+        
+    }
 }

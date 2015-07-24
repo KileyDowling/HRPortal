@@ -4,10 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SGCorpHR.Models;
+using SGCorpHR.UI.Models.Attributes;
 
 namespace SGCorpHR.UI.Models
 {
-    public class CategoryVM
+    public class CategoryVM 
     {
         public PolicyDocument PolicyDocumentToAdd { get; set; }
         public Category Category { get; set; }

@@ -43,12 +43,12 @@
                     <td>@pto.ManagerID</td>
                     
                     <td>
-                        @*<form action="/TimeTracker/DeleteTimesheet" method="Post">
-                            <input type="hidden" name="TimesheetId" id="TimesheetId" value="@ts.TimesheetId" />
-                            <input type="hidden" name="EmpId" id="EmpId" value="@ts.EmpId" />
+                        <form action="/TimeTracker/EditPtoRequest" method="Post">
+                            <input type="hidden" name="PtoRequestId" id="PtoRequestID" value="@pto.PtoRequestID" />
+                            <input type="hidden" name="EmpId" id="EmpId" value="@pto.EmpID" />
 
                             <button>Edit</button>
-                        </form>*@
+                        </form>
                     </td>
                 </tr>
 
