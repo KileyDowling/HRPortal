@@ -13,6 +13,21 @@ namespace SGCorpHR.TEST
     public class PaidTimeOffRepositoryTests
     {
         [Test]
+        public void EditPtoRequestTest()
+        {
+            PaidTimeOff ptoRequest = new PaidTimeOff()
+            {
+                EmpID = 6,
+                Date = new DateTime(2015, 07, 15),
+                HoursRequested = 4
+
+            };
+            PaidTimeOffRepository repo = new PaidTimeOffRepository();
+            repo.EditPtoRequest(ptoRequest);
+
+        }
+
+        [Test]
         public void SubmitPtoRequestTest()
         {
             PaidTimeOff pto = new PaidTimeOff()
@@ -30,7 +45,7 @@ namespace SGCorpHR.TEST
         [Test]
         public void ViewAllptoRequestsTest()
         {
-            List<PaidTimeOff>  ptoList = new List<PaidTimeOff>();
+            List<PaidTimeOff> ptoList = new List<PaidTimeOff>();
             PaidTimeOffRepository repo = new PaidTimeOffRepository();
             ptoList = repo.ViewAllPtoRequests();
             Assert.AreEqual(6, ptoList.Count);

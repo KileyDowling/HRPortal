@@ -14,8 +14,8 @@ namespace SGCorpHR.DATA.Mocks
         {
             return new List<PaidTimeOff>()
             {
-                new PaidTimeOff() {PtoRequestID =  1, Date = new DateTime(2015,01,01), EmpID = 5, HoursRequested = 4, ManagerID = 1, ReasonRejected = "", Status = "Submitted" },
-                new PaidTimeOff() {PtoRequestID =  1, Date = new DateTime(2015,04,02), EmpID = 3, HoursRequested = 8, ManagerID = 1, ReasonRejected = "", Status = "Submitted" }
+                new PaidTimeOff() {PtoRequestID =  1, Date = new DateTime(2015,01,01), EmpID = 5, HoursRequested = 4, ManagerID = 1, ReasonRejected = "", PtoStatus = "Submitted" },
+                new PaidTimeOff() {PtoRequestID =  1, Date = new DateTime(2015,04,02), EmpID = 3, HoursRequested = 8, ManagerID = 1, ReasonRejected = "", PtoStatus = "Submitted" }
                 
             };
         }

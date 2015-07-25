@@ -9,7 +9,7 @@ namespace SGCorpHR.Models
     public class PaidTimeOff
     {
         public int PtoRequestID { get; set; }
-        public string Status { get; set; }
+        public string PtoStatus { get; set; }
         public int EmpID { get; set; }
         public int HoursRequested { get; set; }
         public DateTime Date { get; set; }

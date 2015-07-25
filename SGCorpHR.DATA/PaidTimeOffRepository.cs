@@ -35,6 +35,32 @@ namespace SGCorpHR.DATA
                 
                  return cn.Query<PaidTimeOff>("Select * from PaidTimeOff Order by EmpID ASC, [Date] DESC").ToList();
             }
-        } 
+        }
+
+        public void EditPtoRequest(PaidTimeOff paidTimeOff)
+        {
+            using (var cn = new SqlConnection(Settings.ConnectionString))
+            {
+                var cmd = new SqlCommand("UPDATE [dbo].[PaidTimeOff] "
+                    + "SET [PtoStatus] = @PtoStatus, "
+                    + "[EmpID] = @EmpId, "
+                    + "[HoursRequested] = @HoursRequested, "
+                    + "[Date] = @Date, "
+                    + "[ReasonRejected] = @ReasonReject, "
+                    + "[ManagerID] = @ManagerId "
+                    + "WHERE PtoRequestID = @PtoRequestId", cn);
+                cmd.Parameters.AddWithValue("@PtoRequestId", paidTimeOff.PtoRequestID);
+                cmd.Parameters.AddWithValue("@PtoStatus", paidTimeOff.PtoStatus);
+                cmd.Parameters.AddWithValue("@EmpID", paidTimeOff.EmpID);
+                cmd.Parameters.AddWithValue("@HoursRequested", paidTimeOff.HoursRequested);
+                cmd.Parameters.AddWithValue("@Date", paidTimeOff.Date);
+                cmd.Parameters.AddWithValue("@ReasonReject", paidTimeOff.ReasonRejected);
+                cmd.Parameters.AddWithValue("@ManagerID", paidTimeOff.ManagerID);
+
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

@@ -49,5 +49,11 @@ namespace SGCorpHR.BLL
             }
             return response;
         }
+
+        public void EditPtoRequest(PaidTimeOff ptoRequest)
+        {
+            var repo = new PaidTimeOffRepository();
+            repo.EditPtoRequest(ptoRequest);
+        }
     }
 }
