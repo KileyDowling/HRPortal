@@ -88,6 +88,13 @@ namespace SGCorpHR.BLL
             TimeTrackerRepository repo = new TimeTrackerRepository();
             repo.SubmitNewTimeSheet(timesheet);
         }
+
+        public List<Managers> GetManagers()
+        {
+            var repo = new TimeTrackerRepository();
+            var managers = repo.GetAllManagers();
+            return managers;
+        } 
     }
 
 }

@@ -1,0 +1,2 @@
+SELECT * FROM Employee
+WHERE EmpID = 3 OR EmpID = 4 OR EmpID = 11

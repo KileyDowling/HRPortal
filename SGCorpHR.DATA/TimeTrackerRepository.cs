@@ -73,6 +73,24 @@ namespace SGCorpHR.DATA
             }
         }
 
+        public List<Managers> GetAllManagers()
+        {
+            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            {
+                return
+                   cn.Query<Managers>("SELECT e.FirstName + ' ' + LastName as [ManagerName], e.EmpID FROM Employee e WHERE e.EmpID = 3 OR e.EmpID = 4 OR e.EmpID = 11").ToList();
+            }
+        }
+
+        public List<Managers> GetMngrsAndEmps()
+        {
+            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            {
+                return
+                   cn.Query<Managers>("SELECT m.EmpID,m.FirstName  + ' ' + m.LastName as [EmployeeName], e.FirstName  + ' ' + e.LastName as [ManagerName], e.EmpID as [ManagerId] FROM Employee e NNER JOIN Employee M on e.EmpID = m.ManagerID ORDER BY m.ManagerID").ToList();
+            }
+        } 
+
        
     }
 }

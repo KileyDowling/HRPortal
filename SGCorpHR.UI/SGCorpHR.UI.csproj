@@ -133,6 +133,7 @@
     <Compile Include="Models\Attributes\HoursEnteredAttribute.cs" />
     <Compile Include="Models\CategoryVM.cs" />
     <Compile Include="Models\PaidTimeOffVM.cs" />
+    <Compile Include="Models\PtoEditVM.cs" />
     <Compile Include="Models\TimeTrackerVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\SuggestionsController.cs" />

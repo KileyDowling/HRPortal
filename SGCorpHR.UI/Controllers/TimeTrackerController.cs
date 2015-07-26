@@ -102,7 +102,7 @@ namespace SGCorpHR.UI.Controllers
         [HttpPost]
         public ActionResult SubmitPtoRequest(PaidTimeOffVM ptoVM)
         {
-            if (ModelState.IsValidField("HoursRequested"))
+            if (ModelState.IsValidField("HoursRequested") && ModelState.IsValidField("Date") && ModelState.IsValidField("EmpID"))
             {
                 var ptoRequest = new PaidTimeOff();
                 ptoRequest.EmpID = ptoVM.EmpId;
@@ -121,11 +121,29 @@ namespace SGCorpHR.UI.Controllers
            return RedirectToAction("ViewPtoRequests");
         }
 
+        [HttpPost]
         public ActionResult EditPtoRequest(int PtoRequestId)
         {
-            return View();
+            PtoEditVM ptoEditVm = new PtoEditVM();
+            ptoEditVm.GetSingleRequest(PtoRequestId);
+            var ops = new TimeTrackerOperations();
+            var selectedEmp = ops.GetAllEmployees().Data.FirstOrDefault(x=>x.EmpID == ptoEditVm.PtoRequestToEdit.EmpID);
+            ptoEditVm.FullName = string.Format("{0}, {1}", selectedEmp.LastName, selectedEmp.FirstName);
+            var managers = ops.GetManagers();
+            ptoEditVm.GenerateManagersList(managers);
+
+            return View(ptoEditVm);
+
         }
 
-        
+        public ActionResult SubmitEditedRequest(PtoEditVM ptoEditVm)
+        {
+            var ops = OperationsFactory.CreatePaidTimeOffOperations();
+            if (ptoEditVm.PtoRequestToEdit.ReasonRejected == null)
+                ptoEditVm.PtoRequestToEdit.ReasonRejected = "N/A";
+            ops.EditPtoRequest(ptoEditVm.PtoRequestToEdit);
+
+            return RedirectToAction("ViewPtoRequests");
+        }
     }
 }

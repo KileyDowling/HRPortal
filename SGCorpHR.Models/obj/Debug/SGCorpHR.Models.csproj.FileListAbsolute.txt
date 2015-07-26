@@ -3,3 +3,8 @@ C:\Users\Apprentice\Desktop\GitHub\JacobSaliga\SGCorpHRV2\SGCorpHR\SGCorpHR.Mode
 C:\Users\Apprentice\Desktop\GitHub\JacobSaliga\SGCorpHRV2\SGCorpHR\SGCorpHR.Models\obj\Debug\SGCorpHR.Models.csprojResolveAssemblyReference.cache
 C:\Users\Apprentice\Desktop\GitHub\JacobSaliga\SGCorpHRV2\SGCorpHR\SGCorpHR.Models\obj\Debug\SGCorpHR.Models.dll
 C:\Users\Apprentice\Desktop\GitHub\JacobSaliga\SGCorpHRV2\SGCorpHR\SGCorpHR.Models\obj\Debug\SGCorpHR.Models.pdb
+C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.Models\bin\Debug\SGCorpHR.Models.dll
+C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.Models\bin\Debug\SGCorpHR.Models.pdb
+C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.Models\obj\Debug\SGCorpHR.Models.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.Models\obj\Debug\SGCorpHR.Models.dll
+C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.Models\obj\Debug\SGCorpHR.Models.pdb
