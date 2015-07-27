@@ -78,7 +78,7 @@ namespace SGCorpHR.DATA
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
                 return
-                   cn.Query<Managers>("SELECT e.FirstName + ' ' + LastName as [ManagerName], e.EmpID FROM Employee e WHERE e.EmpID = 3 OR e.EmpID = 4 OR e.EmpID = 11").ToList();
+                   cn.Query<Managers>("GenerateListOfMngrs", commandType: CommandType.StoredProcedure).ToList();
             }
         }
 
