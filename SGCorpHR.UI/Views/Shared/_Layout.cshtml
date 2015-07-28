@@ -50,6 +50,12 @@
 
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Employee Directory<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/EmployeeDirectory/EmployeeDirectory">View Employee Directory</a></li>
+                        </ul>
+                    </li>
                 </ul>
 
             </div>
@@ -88,7 +94,10 @@
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/app/displayEmpDirector.js"></script>
+    @RenderSection("Scripts", false)
+
 
 @*<script type="text/javascript">
     $(document).ready(function () {

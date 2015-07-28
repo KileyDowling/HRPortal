@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "EmployeeDirectory";
+}
+
+<h2>Employee Directory</h2>
+
+<div class="row">
+    <table id="employees" class="table">
+        <thead>
+        <tr>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Hire Date</th>
+            <th>Manager Name</th>
+            <th>Department Name</th>
+            <th>Location Name</th>
+            <th>Status</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+</div>
+
+@section Scripts {
+    <script>
+        var uri = '/api/EmployeeDirectory';
+
+        $(document).ready(function() {
+
+        });
+
+        function loadEmployees() {
+            $.getJSON(uri)
+                .done(function(data) {
+                    $('#employees tbody tr').remove();
+
+                    $.each(data, function(index, employee) {
+                        $(createRow(employee)).appendTo($('#employees tbody'));
+                    });
+                });
+        }
+
+        function createRow(employee) {
+            return '<tr><td>' + employee.LastName + '</td> <td>' + employee.FirstName + '</td> <td>' + employee.HireDate + '</td> <td>' + employee.ManagerName + '</td> <td>' + employee.DepartmentName + '</td> <td>' + employee.LocationName + '</td> <td>' + employee.Status + '</td> </tr>';
+        }
+    </script>
+}
