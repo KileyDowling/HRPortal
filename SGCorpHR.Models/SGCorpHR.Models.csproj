@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Category.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="Interfaces\IEmployeeDirectoryRepository.cs" />
     <Compile Include="Interfaces\IPaidTimeOffRepository.cs" />
     <Compile Include="Interfaces\ISuggestionRepository.cs" />
     <Compile Include="Managers.cs" />

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeDirectoryOperations.cs" />
     <Compile Include="FileOperations.cs" />
     <Compile Include="OperationsFactory.cs" />
     <Compile Include="PaidTimeOffOperations.cs" />

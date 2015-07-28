@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeDirectoryRepositoryTests.cs" />
+    <Compile Include="EmployeeOpsTest.cs" />
     <Compile Include="FileOperationsTest.cs" />
     <Compile Include="FileRepositoryTest.cs" />
     <Compile Include="PaidTimeOffOperationsTests.cs" />

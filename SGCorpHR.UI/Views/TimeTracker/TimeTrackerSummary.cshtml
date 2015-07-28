@@ -62,16 +62,23 @@
             </tr>
 
         }
-            @foreach (var pt in (List<PaidTimeOff>)ViewBag.empPtoList)
+            @if((List<PaidTimeOff>)ViewBag.empPtoList !=null) {
+            foreach (var pt in (List<PaidTimeOff>) ViewBag.empPtoList)
             {
                 <tr>
                     <td>@pt.Date.ToShortDateString()</td>
                     <td>@pt.HoursRequested</td>
                     <td>@pt.EntryType</td>
-                    <td>@pt.PtoStatus @if(pt.ReasonRejected !="N/A") {@pt.ReasonRejected}</td>
-                    
+                    <td>@pt.PtoStatus @if (pt.ReasonRejected != "N/A")
+                                      {
+                                          @pt.ReasonRejected
+                                      }</td>
+                    <td></td>
+
+
                 </tr>
 
+            }
             }
 
         </tbody>
