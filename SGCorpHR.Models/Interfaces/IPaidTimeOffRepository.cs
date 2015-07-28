@@ -13,6 +13,8 @@ namespace SGCorpHR.Models.Interfaces
 
 
         List<PaidTimeOff> ViewAllPtoRequests();
+        List<PaidTimeOff> ViewPtoRequestsForEmp(int empID);
+
 
     }
 }

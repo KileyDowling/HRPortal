@@ -69,6 +69,9 @@ namespace SGCorpHR.UI.Controllers
             TimeTrackerOperations ops = new TimeTrackerOperations();
             Response<TimeTrackerSummary> response = new Response<TimeTrackerSummary>();
             response = ops.GetTimeTrackerSummary(empId);
+            var ptoOps = OperationsFactory.CreatePaidTimeOffOperations();
+            var empsPtoRequests = ptoOps.ViewPtoRequestsForEmp(empId);
+            ViewBag.empPtoList = empsPtoRequests.Data;
 
             return View(response);
 

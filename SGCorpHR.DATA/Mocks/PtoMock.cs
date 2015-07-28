@@ -10,8 +10,19 @@ namespace SGCorpHR.DATA.Mocks
 {
     public class PtoMock : IPaidTimeOffRepository
     {
+
+        public List<PaidTimeOff> ViewPtoRequestsForEmp(int empID)
+        {
+            return new List<PaidTimeOff>()
+            {
+                new PaidTimeOff() {PtoRequestID =  1, Date = new DateTime(2015,01,01), EmpID = empID, HoursRequested = 4, ManagerID = 1, ReasonRejected = "", PtoStatus = "Submitted" },
+                new PaidTimeOff() {PtoRequestID =  1, Date = new DateTime(2015,04,02), EmpID = empID, HoursRequested = 8, ManagerID = 1, ReasonRejected = "", PtoStatus = "Submitted" }
+                
+            };
+        }
         public List<PaidTimeOff> ViewAllPtoRequests()
         {
+
             return new List<PaidTimeOff>()
             {
                 new PaidTimeOff() {PtoRequestID =  1, Date = new DateTime(2015,01,01), EmpID = 5, HoursRequested = 4, ManagerID = 1, ReasonRejected = "", PtoStatus = "Submitted" },

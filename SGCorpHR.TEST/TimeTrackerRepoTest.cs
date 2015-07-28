@@ -36,6 +36,8 @@ namespace SGCorpHR.TEST
             var repo = new TimeTrackerRepository();
             List<Timesheet> timesheets = new List<Timesheet>();
             timesheets = repo.GetAllTimeSheets(6);
+            var timesheet = timesheets.FirstOrDefault(x=>x.TimesheetId==22);
+            Assert.AreEqual(timesheet.EntryType, "Timesheet");
             Assert.AreEqual(4, timesheets.Count);
         }
 

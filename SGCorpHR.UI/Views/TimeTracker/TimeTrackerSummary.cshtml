@@ -1,6 +1,9 @@
-﻿@model SGCorpHR.Models.Response<SGCorpHR.Models.TimeTrackerSummary>
+﻿@using System.Collections
+@using SGCorpHR.Models
+@model SGCorpHR.Models.Response<SGCorpHR.Models.TimeTrackerSummary>
 @{
     ViewBag.Title = "SelectedEmployeeSummary";
+    
 }
 
    <h3>Summary</h3>
@@ -29,7 +32,13 @@
                 Date
             </th>
             <th>
-                Total Hours Worked
+                Total Hours
+            </th>
+            <th>
+                Entry Type
+            </th>
+            <th>
+                Status
             </th>
         </tr>
         </thead>
@@ -40,10 +49,12 @@
             <tr>
                 <td>@ts.FormattedDateOfTimesheet</td>
                 <td>@ts.TotalHoursByDay</td>
+                <td>@ts.EntryType</td>
+                <td></td>
                 <td>
                     <form action="/TimeTracker/DeleteTimesheet" method="Post">
                         <input type="hidden" name="TimesheetId" id="TimesheetId" value="@ts.TimesheetId"/>
-                        <input type="hidden" name="EmpId" id="EmpId" value="@ts.EmpId" />
+                        <input type="hidden" name="EmpId" id="EmpId" value="@ts.EmpId"/>
 
                         <button>Delete</button>
                     </form>
@@ -51,6 +62,17 @@
             </tr>
 
         }
+            @foreach (var pt in (List<PaidTimeOff>)ViewBag.empPtoList)
+            {
+                <tr>
+                    <td>@pt.Date.ToShortDateString()</td>
+                    <td>@pt.HoursRequested</td>
+                    <td>@pt.EntryType</td>
+                    <td>@pt.PtoStatus @if(pt.ReasonRejected !="N/A") {@pt.ReasonRejected}</td>
+                    
+                </tr>
+
+            }
 
         </tbody>
     </table>

@@ -38,9 +38,13 @@ namespace SGCorpHR.DATA
 
         public void AddSuggestion(Suggestion suggestion, string filePath)
         {
+            int suggestionID = 1;
             var suggestionsList = GetAllSuggestions(filePath);
 
-            int suggestionID = (suggestionsList.Max(s => s.SuggestionID) + 1);
+            if (suggestionsList.Count != 0)
+                suggestionID = (suggestionsList.Max(s => s.SuggestionID) + 1);
+
+
 
             suggestion.SuggestionID = suggestionID;
             suggestionsList.Add(suggestion);

@@ -37,6 +37,16 @@ namespace SGCorpHR.DATA
             }
         }
 
+
+        public List<PaidTimeOff> ViewPtoRequestsForEmp(int empID)
+        {
+            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            {
+
+                return cn.Query<PaidTimeOff>("Select * from PaidTimeOff pt inner join EntryType et on pt.EntryTypeID = et.EntryTypeID WHERE EmpID = " + empID + "Order by EmpID ASC, [Date] DESC").ToList();
+            }
+        }
+
         public void EditPtoRequest(PaidTimeOff paidTimeOff)
         {
             using (var cn = new SqlConnection(Settings.ConnectionString))

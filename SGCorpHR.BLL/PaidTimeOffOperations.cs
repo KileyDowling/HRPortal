@@ -24,10 +24,39 @@ namespace SGCorpHR.BLL
             repo.SubmitPtoRequest(pto);
         }
 
+
+
+
         public Response<List<PaidTimeOff>> ViewAllPtoRequests()
         {
             Response<List<PaidTimeOff>> response = new Response<List<PaidTimeOff>>();
             List<PaidTimeOff> ptoList = _ptoRepo.ViewAllPtoRequests();
+
+            try
+            {
+                if (ptoList.Count > 0)
+                {
+                    response.Data = ptoList;
+                    response.Success = true;
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Message = "There are no requests to display";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
+        public Response<List<PaidTimeOff>> ViewPtoRequestsForEmp(int empId)
+        {
+            Response<List<PaidTimeOff>> response = new Response<List<PaidTimeOff>>();
+            List<PaidTimeOff> ptoList = _ptoRepo.ViewPtoRequestsForEmp(empId);
 
             try
             {

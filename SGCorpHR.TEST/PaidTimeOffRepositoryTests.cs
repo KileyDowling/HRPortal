@@ -50,5 +50,13 @@ namespace SGCorpHR.TEST
             ptoList = repo.ViewAllPtoRequests();
             Assert.AreEqual(6, ptoList.Count);
         }
+
+        [Test]
+        public void ViewPtoRequestsForEmpTest()
+        {
+            PaidTimeOffRepository repo = new PaidTimeOffRepository();
+            List<PaidTimeOff>  ptoList = repo.ViewPtoRequestsForEmp(6);
+            Assert.AreEqual(2, ptoList.Count);
+        }
     }
 }

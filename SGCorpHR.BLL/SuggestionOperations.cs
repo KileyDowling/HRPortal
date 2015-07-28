@@ -35,7 +35,7 @@ namespace SGCorpHR.BLL
                 else
                 {
                     response.Success = false;
-                    response.Message = "No Files were found";
+                    response.Message = "There are no suggestions at this time";
                 }
             }
             catch (Exception ex)
