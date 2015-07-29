@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace SGCorpHR.DATA
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
-                return cn.Query<Employee>("select * from Employee e inner join Departments d on e.DepartmentID = d.DepartmentID").ToList();
+                return cn.Query<Employee>("EmployeeDirectory", commandType: CommandType.StoredProcedure).ToList();
             }
 
         }

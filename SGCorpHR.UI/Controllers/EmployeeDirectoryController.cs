@@ -11,10 +11,12 @@ namespace SGCorpHR.UI.Controllers
 {
     public class EmployeeDirectoryController : ApiController
     {
-        public Response<List<Employee>> Get()
+        public List<Employee> Get()
         {
             var ops = new EmployeeDirectoryOperations();
-            return ops.ListAllEmployees();
+            var response = ops.ListAllEmployees();
+            var list = response.Data;
+            return list;
         }
  
     }

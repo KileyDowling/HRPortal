@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "EmployeeDirectory";
+    ViewBag.Title = "Index";
 }
 
 <h2>Employee Directory</h2>
@@ -8,20 +8,18 @@
 <div class="row">
     <table id="employees" class="table">
         <thead>
-        <tr>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Hire Date</th>
-            <th>Manager Name</th>
-            <th>Department Name</th>
-            <th>Location</th>
-            <th>Status</th>
+            <tr>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Hire Date</th>
+                <th>Manager Name</th>
+                <th>Department Name</th>
+                <th>Location Name</th>
+                <th>Status</th>
 
-        </tr>
+            </tr>
         </thead>
-        <tbody>
-
-        </tbody>
+        <tbody></tbody>
     </table>
 
 </div>
@@ -46,7 +44,7 @@
         }
 
         function createRow(employee) {
-            return '<tr><td>' + employee.LastName + '</td> <td>' + employee.FirstName + '</td> <td>' + employee.HireDate + '</td> <td>' + employee.ManagerName + '</td> <td>' + employee.DepartmentName + '</td> <td>' + employee.State + '</td> <td>' + employee.Status + '</td> </tr>';
+            return '<tr><td>' + employee.LastName + '</td> <td>' + employee.FirstName + '</td> <td>' + employee.FormattedHireDate + '</td> <td>' + employee.ManagerName + '</td> <td>' + employee.DepartmentName + '</td> <td>' + employee.State + '</td> <td>' + employee.Status + '</td> </tr>';
         }
     </script>
 }

@@ -13,7 +13,9 @@ namespace SGCorpHR.Models
         public string FirstName { get; set; }
         public DateTime? HireDate { get; set; }
         public string DepartmentName { get; set; }
-
+        public string ManagerName { get; set; }
+        public string State { get; set; }
+        public string Status { get; set; }
         public string FormattedHireDate
         {
             get
