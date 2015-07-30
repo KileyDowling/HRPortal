@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DepartmentRepository.cs" />
     <Compile Include="EmployeeDirectoryRepository.cs" />
     <Compile Include="FileRepository.cs" />
     <Compile Include="Mocks\PtoMock.cs" />
