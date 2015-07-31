@@ -19,10 +19,10 @@ namespace SGCorpHR.UI.Controllers
             return list;
         }
 
-        public List<Employee> Get(int departmentID)
+        public List<Employee> Get(int id)
         {
             var ops = new EmployeeDirectoryOperations();
-            var response = ops.GetEmpByDptID(departmentID);
+            var response = ops.GetEmpByDptID(id);
             var list = response.Data;
             
             return list;

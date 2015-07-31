@@ -3,11 +3,10 @@
     ViewBag.Title = "LookUp";
 }
 
-<h2>LookUp</h2>
-
 <div class="row">
     <div class="col-xs-6">
         <h2>Search by Department</h2>
+        <a href="/Employee/">View All Employees</a>
         <div class="form-group">
             <label>Department</label>
             <input type="text" id="departmentID" class="form-control" />
@@ -16,9 +15,23 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-6">
-        <br /><br />
-        <p id="dptEmp" />
+    <div>
+        <br/><br/>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Hire Date</th>
+                    <th>Manager Name</th>
+                    <th>Department Name</th>
+                    <th>Location</th>
+                    <th>Status</th>
+
+                </tr>
+            </thead>
+            <tbody id="dptEmp"></tbody>
+        </table>
     </div>
 </div>
 @section Scripts
@@ -30,12 +43,21 @@
             var id = $('#departmentID').val();
 
             $.getJSON(uri + id)
-                .done(function(data) {
-                    $('#dptEmp').text(data.FirstName + data.LastName);
+                .done(function (data) {
+                    $('#dptEmp tr').remove();
+
+                    $.each(data, function(index, employee) {
+                        $(createRow(employee)).appendTo($('#dptEmp'));
+                    });
                 })
-                .fail(function(jqXhr, status, err) {
-                    $('#dptEmp').text('Error: ' + err);
-                });
+    
+        .fail(function(jqXhr, status, err) {
+            $('#dptEmp').text('Error: ' + err);
+        });
+    }
+
+        function createRow(employee) {
+            return '<tr><td>' + employee.LastName + '</td> <td>' + employee.FirstName + '</td> <td>' + employee.FormattedHireDate + '</td> <td>' + employee.ManagerName + '</td> <td>' + employee.Department.DepartmentName + '</td> <td>' + employee.State + '</td> <td>' + employee.Status + '</td> </tr>';
         }
     </script>
 }
