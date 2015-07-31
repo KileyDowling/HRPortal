@@ -13,5 +13,10 @@ namespace SGCorpHR.UI.Controllers
         {
             return View();
         }
+
+        public ActionResult LookUp()
+        {
+            return View();
+        }
     }
 }

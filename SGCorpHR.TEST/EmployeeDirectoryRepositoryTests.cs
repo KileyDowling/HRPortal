@@ -18,7 +18,7 @@ namespace SGCorpHR.TEST
             var allEmps = repo.ListAllEmployees();
             var empDpt = allEmps.FirstOrDefault(x=>x.EmpID==1);
             Assert.AreEqual(17,allEmps.Count);
-            Assert.AreEqual("Marketing", empDpt.DepartmentName);
+            Assert.AreEqual("Marketing", empDpt.Department.DepartmentName);
         }
      }
 }

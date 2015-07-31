@@ -21,5 +21,23 @@ namespace SGCorpHR.TEST
             var newDpt = ptoList.Data.FirstOrDefault(x => x.DepartmentID == 8);
             Assert.AreEqual("Customer Service", newDpt.DepartmentName);
         }
+
+        [Test]
+        public void ListAllDptTest()
+        {
+            var ops = new EmployeeDirectoryOperations();
+            var response = ops.ListAllDepartments();
+            Assert.IsTrue(response.Success);
+            Assert.AreEqual(8,response.Data.Count);
+        }
+
+        [Test]
+        public void GetSingleDptTest()
+        {
+            var ops = new EmployeeDirectoryOperations();
+            var response = ops.GetSingleDpt(5);
+            Assert.IsTrue(response.Success);
+            Assert.AreEqual("Human Resources", response.Data.DepartmentName);
+        }
     }
 }

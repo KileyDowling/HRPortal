@@ -18,6 +18,15 @@ namespace SGCorpHR.UI.Controllers
             var list = response.Data;
             return list;
         }
+
+        public List<Employee> Get(int departmentID)
+        {
+            var ops = new EmployeeDirectoryOperations();
+            var response = ops.GetEmpByDptID(departmentID);
+            var list = response.Data;
+            
+            return list;
+        } 
  
     }
 }

@@ -12,7 +12,7 @@ namespace SGCorpHR.Models
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public DateTime? HireDate { get; set; }
-        public string DepartmentName { get; set; }
+        public Departments Department { get; set; }
         public string ManagerName { get; set; }
         public string State { get; set; }
         public string Status { get; set; }

@@ -166,6 +166,7 @@
     <Content Include="Views\TimeTracker\EditPtoRequest.cshtml" />
     <Content Include="Views\EmployeeDirectory\EmployeeDirectory.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Employee\LookUp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
