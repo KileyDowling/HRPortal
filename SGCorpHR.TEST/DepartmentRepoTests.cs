@@ -12,6 +12,14 @@ namespace SGCorpHR.TEST
     public class DepartmentRepoTests
     {
         [Test]
+        public void CheckIfDptExistsTest()
+        {
+            var repo = new DepartmentRepository();
+            var exists = repo.CheckIfDptExists("IT");
+            Assert.IsTrue(exists);
+        }
+
+        [Test]
         public void ListAllDptTest()
         {
             var repo = new DepartmentRepository();

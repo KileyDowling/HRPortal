@@ -135,6 +135,7 @@
     </Compile>
     <Compile Include="Models\Attributes\HoursEnteredAttribute.cs" />
     <Compile Include="Models\CategoryVM.cs" />
+    <Compile Include="Models\DepartmentsVM.cs" />
     <Compile Include="Models\PaidTimeOffVM.cs" />
     <Compile Include="Models\PtoEditVM.cs" />
     <Compile Include="Models\TimeTrackerVM.cs" />

@@ -27,11 +27,28 @@ namespace SGCorpHR.DATA
             }
         }
 
+        public bool CheckIfDptExists(string departmentName)
+        {
+            bool dptExists;
+            var dptList = ListAll();
+            var specDpt = dptList.FirstOrDefault(x => x.DepartmentName == departmentName);
+            if (specDpt.DepartmentName == departmentName) 
+                dptExists = true;
+            else
+                dptExists = false;
+
+            return dptExists;
+        }
+
         public void CreateDepartment(string departmentName)
         {
-            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            var exists = CheckIfDptExists(departmentName);
+            if (!exists)
             {
-                cn.Query<Departments>("insert into Departments(DepartmentName) values('" + departmentName +"')");
+                using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+                {
+                    cn.Query<Departments>("insert into Departments(DepartmentName) values('" + departmentName + "')");
+                }
             }
         }
     }
