@@ -74,11 +74,39 @@ namespace SGCorpHR.BLL
         {
             var repo = new DepartmentRepository();
             var response = new Response<Departments>();
-            Departments dpt = repo.GetSingleDpt(departmentId);
+            Departments dpt = repo.GetSingleDptById(departmentId);
 
             try
             {
                 if (dpt != null)
+                {
+                    response.Data = dpt;
+                    response.Success = true;
+
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Message = "That department doesn't exist";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+        public Response<int> GetDptIdByName(string departmentName)
+        {
+            var repo = new DepartmentRepository();
+            var response = new Response<int>();
+            int dpt = repo.GetDptIdByName(departmentName);
+
+            try
+            {
+                if (dpt != 0)
                 {
                     response.Data = dpt;
                     response.Success = true;

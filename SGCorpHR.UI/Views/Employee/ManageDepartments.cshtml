@@ -1,0 +1,35 @@
+﻿@model SGCorpHR.UI.Models.DepartmentsVM
+
+@{
+    ViewBag.Title = "ManageDepartments";
+}
+<div class="row">
+    <div class="col-xs-12">
+        @Html.Partial("_CreateDepartment")
+    </div>
+</div>
+<h2>Manage Departments</h2>
+
+<div class="row">
+    <div class="col-xs-3" id="listAllDpts">
+        <select class="btn btn-default"></select>
+    </div>
+        <button class="btn btn-default" onclick="update()">Update Department</button>
+        <button class="btn btn-danger" onclick="deleteDpt()">Delete Department</button>
+    </div>
+<br/>
+<div class="actionMsg">
+    
+</div>
+<div class="col-xs-6">
+    <div class="row">
+        <button class="btn btn-primary" onclick="createDpt()">Create Department</button>
+
+    </div>
+</div>
+
+
+@section scripts {
+<script src="~/Scripts/app/deleteDepartment.js"></script>
+<script src="~/Scripts/app/createDepartment.js"></script>
+}

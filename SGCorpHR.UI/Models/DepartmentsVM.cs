@@ -2,22 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using SGCorpHR.BLL;
+using SGCorpHR.Models;
 
 namespace SGCorpHR.UI.Models
 {
     public class DepartmentsVM
     {
-        public List<string> DepartmentNames { get; set; }
+        public List<SelectListItem> DepartmentNames { get; set; }
+        public DepartmentsVM SelectedDepartment { get; set; }
+        public Departments NewDepartment { get; set; }
 
-        public void ListAllNames()
+        public void GenerateListOfDpts(List<Departments> departments)
         {
-            var ops = new EmployeeDirectoryOperations();
-            var resposne = ops.ListAllDepartments();
-            foreach (var d in resposne.Data)
+            DepartmentNames = new List<SelectListItem>();
+            foreach (var d in departments)
             {
-                DepartmentNames.Add(d.DepartmentName);
+                DepartmentNames.Add(new SelectListItem() { Text = d.DepartmentName, Value = d.DepartmentID .ToString()});
             }
-        }  
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -19,12 +20,19 @@ namespace SGCorpHR.DATA
             }
         }
 
-        public Departments GetSingleDpt(int departmentId)
+        public Departments GetSingleDptById(int departmentId)
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
                 return cn.Query<Departments>("Select * from Departments WHERE DepartmentID = @dptId", new { dptId = departmentId }).ToList().FirstOrDefault();
             }
+        }
+
+        public int GetDptIdByName (string departmentName)
+        {
+            var dptList = ListAll();
+            var specDpt = dptList.FirstOrDefault(x => x.DepartmentName == departmentName);
+            return specDpt.DepartmentID;
         }
 
         public bool CheckIfDptExists(string departmentName)
@@ -47,9 +55,21 @@ namespace SGCorpHR.DATA
             {
                 using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
                 {
-                    cn.Query<Departments>("insert into Departments(DepartmentName) values('" + departmentName + "')");
+                    var p = new DynamicParameters();
+                    p.Add("dptName", departmentName);
+                    cn.Query("CreateDepartment",p, commandType: CommandType.StoredProcedure);
                 }
             }
+        }
+
+        public void DeleteDepartment(int departmentId)
+        {
+
+            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            {
+                cn.Query("Delete Departments WHERE DepartmentID = @dptId", new { dptId = departmentId });
+            }
+            
         }
     }
 }

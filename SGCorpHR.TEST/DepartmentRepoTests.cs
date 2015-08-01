@@ -31,7 +31,7 @@ namespace SGCorpHR.TEST
         public void GetSingleDptTest()
         {
             var repo = new DepartmentRepository();
-            var dpt = repo.GetSingleDpt(4);
+            var dpt = repo.GetSingleDptById(4);
             Assert.AreEqual("Sales", dpt.DepartmentName);
 
         }
