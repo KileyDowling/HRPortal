@@ -1,11 +1,10 @@
-﻿@model SGCorpHR.UI.Models.DepartmentsVM
-
-@{
-    ViewBag.Title = "ManageDepartments";
+﻿@{
+    ViewBag.Title = "Manage Departments";
 }
 <div class="row">
     <div class="col-xs-12">
-        @Html.Partial("_CreateDepartment")
+        @Html.Partial("_CreateDepartment") 
+        @Html.Partial("_UpdateDepartment")
     </div>
 </div>
 <h2>Manage Departments</h2>
@@ -14,7 +13,7 @@
     <div class="col-xs-3" id="listAllDpts">
         <select class="btn btn-default"></select>
     </div>
-        <button class="btn btn-default" onclick="update()">Update Department</button>
+        <button class="btn btn-default" onclick="updateDpt()">Update Department</button>
         <button class="btn btn-danger" onclick="deleteDpt()">Delete Department</button>
     </div>
 <br/>
@@ -32,4 +31,5 @@
 @section scripts {
 <script src="~/Scripts/app/deleteDepartment.js"></script>
 <script src="~/Scripts/app/createDepartment.js"></script>
+<script src="~/Scripts/app/updateDepartment.js"></script>
 }

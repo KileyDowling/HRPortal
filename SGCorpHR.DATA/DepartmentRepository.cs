@@ -71,5 +71,16 @@ namespace SGCorpHR.DATA
             }
             
         }
+
+        public void UpdateDepartment(Departments department)
+        {
+            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            {
+                var p = new DynamicParameters();
+                p.Add("dptName", department.DepartmentName);
+                p.Add("dptId", department.DepartmentID);
+                cn.Query("UpdateDepartment", p, commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }

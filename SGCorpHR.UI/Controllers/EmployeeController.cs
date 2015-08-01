@@ -12,7 +12,7 @@ namespace SGCorpHR.UI.Controllers
     {
         public List<SelectListItem> GenerateDepartmentList()
         {
-            var ops = new EmployeeDirectoryOperations();
+            var ops = new DepartmentOperations();
             var response = ops.ListAllDepartments();
             var listDpt = response.Data;
             var dptVM = new DepartmentsVM();
@@ -27,15 +27,6 @@ namespace SGCorpHR.UI.Controllers
             return View();
         }
 
-        public ActionResult ManageDepartments()
-        {
-            var model = new DepartmentsVM()
-            {
-                DepartmentNames = GenerateDepartmentList()
-            };
-           
-            return View(model);
-        }
 
     }
 }

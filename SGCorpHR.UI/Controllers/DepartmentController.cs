@@ -9,12 +9,12 @@ using SGCorpHR.Models;
 
 namespace SGCorpHR.UI.Controllers
 {
-    public class DepartmentsController : ApiController
+    public class DepartmentController : ApiController
     {
         // GET api/<controller>
         public List<Departments> Get()
         {
-            var ops = new EmployeeDirectoryOperations();
+            var ops = new DepartmentOperations();
             var response = ops.ListAllDepartments();
             var list = response.Data;
             return list;
@@ -31,9 +31,9 @@ namespace SGCorpHR.UI.Controllers
 
         public HttpResponseMessage Post(string departmentName)
         {
-            var empOps = new EmployeeDirectoryOperations();
-            empOps.CreateDepartment(departmentName);
-            var opsResponse = empOps.GetDptIdByName(departmentName);
+            var ops = new DepartmentOperations();
+            ops.CreateDepartment(departmentName);
+            var opsResponse = ops.GetDptIdByName(departmentName);
             int dptId = opsResponse.Data;
 
             var response = Request.CreateResponse(HttpStatusCode.Created, departmentName);
@@ -47,8 +47,10 @@ namespace SGCorpHR.UI.Controllers
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(Departments department)
         {
+            var ops = new DepartmentOperations();
+            ops.UpdateDepartment(department);
         }
 
         // DELETE api/<controller>/5

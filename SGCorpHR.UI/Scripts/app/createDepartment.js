@@ -5,7 +5,7 @@
             var name = $('#name').val();
 
             $.post(uri, name)
-                .done(function() {
+                .success(function() {
                     loadDepartmentNames();
                     $('#createDepartmentModal').modal('hide');
                 })

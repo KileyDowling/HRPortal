@@ -15,7 +15,7 @@ namespace SGCorpHR.TEST
         [Test]
         public void CreateDptTest()
         {
-            var ops = new EmployeeDirectoryOperations();
+            var ops = new DepartmentOperations();
             ops.CreateDepartment("Customer Service");
             var ptoList = ops.ListAllDepartments();
             var newDpt = ptoList.Data.FirstOrDefault(x => x.DepartmentID == 8);
@@ -25,7 +25,7 @@ namespace SGCorpHR.TEST
         [Test]
         public void ListAllDptTest()
         {
-            var ops = new EmployeeDirectoryOperations();
+            var ops = new DepartmentOperations();
             var response = ops.ListAllDepartments();
             Assert.IsTrue(response.Success);
             Assert.AreEqual(8,response.Data.Count);
@@ -34,7 +34,7 @@ namespace SGCorpHR.TEST
         [Test]
         public void GetSingleDptTest()
         {
-            var ops = new EmployeeDirectoryOperations();
+            var ops = new DepartmentOperations();
             var response = ops.GetSingleDpt(5);
             Assert.IsTrue(response.Success);
             Assert.AreEqual("Human Resources", response.Data.DepartmentName);

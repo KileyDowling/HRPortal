@@ -1,4 +1,4 @@
-﻿var uri = '/api/Departments/';
+﻿var uri = '/api/Department/';
 $(document).ready(function() {
     loadDepartmentNames();
 });

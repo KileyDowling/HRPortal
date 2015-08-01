@@ -127,7 +127,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\DepartmentManagementController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmployeeDirectoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -170,8 +171,9 @@
     <Content Include="Views\TimeTracker\SubmitPtoRequest.cshtml" />
     <Content Include="Views\TimeTracker\EditPtoRequest.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Employee\ManageDepartments.cshtml" />
-    <Content Include="Views\Employee\_CreateDepartment.cshtml" />
+    <Content Include="Views\DepartmentManagement\Index.cshtml" />
+    <Content Include="Views\DepartmentManagement\_CreateDepartment.cshtml" />
+    <Content Include="Views\DepartmentManagement\_UpdateDepartment.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -183,6 +185,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="PolicyDocuments\DressCode\" />
     <Folder Include="Resumes\" />
+    <Folder Include="Views\Department\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SGCorpHR.BLL\SGCorpHR.BLL.csproj">

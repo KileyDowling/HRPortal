@@ -9,7 +9,6 @@
 
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     
-   
 
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -54,7 +53,12 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Employee Directory<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/Employee">View Employee Directory</a></li>
-                            <li><a href="/Employee/ManageDepartments">Manage Departments</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Departments<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/DepartmentManagement">Manage Departments</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -76,7 +80,6 @@
                 <img src="/Image/swg_logo-white.png" style="width: 200px;
                                                                                                                      ">
             </a>
-            @*@Html.ActionLink("SGCorp Resumes", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav"></ul>
