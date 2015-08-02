@@ -40,7 +40,7 @@ namespace SGCorpHR.DATA
             bool dptExists;
             var dptList = ListAll();
             var specDpt = dptList.FirstOrDefault(x => x.DepartmentName == departmentName);
-            if (specDpt.DepartmentName == departmentName) 
+            if (specDpt != null && specDpt.DepartmentName == departmentName) 
                 dptExists = true;
             else
                 dptExists = false;

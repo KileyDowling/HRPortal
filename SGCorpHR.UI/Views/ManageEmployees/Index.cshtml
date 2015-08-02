@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Manage Employees";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        @Html.Partial("_CreateEmployee")
+        @Html.Partial("_EditEmployee")
+    </div>
+</div>
+<h2>Manage Employees</h2>
+
+<div class="row">
+    <div class="col-xs-3" id="listAllEmps">
+        <select class="btn btn-default"></select>
+    </div>
+    <button class="btn btn-default" onclick="editEmp()">Edit Employee</button>
+    <button class="btn btn-danger" onclick="deleteEmp()">Delete Employee</button>
+</div>
+<br />
+<div class="actionMsg">
+
+</div>
+<div class="col-xs-6">
+    <div class="row">
+        <button class="btn btn-primary" onclick="createEmp()">Add New Employee</button>
+
+    </div>
+</div>
+
+
+@section scripts {
+<script src="~/Scripts/app/loadEmpsDropDown.js"></script>
+<script src="~/Scripts/app/deleteEmp.js"></script>
+<script src="~/Scripts/app/editEmp.js"></script>
+    
+}
+

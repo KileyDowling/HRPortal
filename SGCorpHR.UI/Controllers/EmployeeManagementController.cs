@@ -9,7 +9,7 @@ using SGCorpHR.Models;
 
 namespace SGCorpHR.UI.Controllers
 {
-    public class EmployeeDirectoryController : ApiController
+    public class EmployeeManagementController : ApiController
     {
         public List<Employee> Get()
         {
@@ -18,14 +18,12 @@ namespace SGCorpHR.UI.Controllers
             var list = response.Data;
             return list;
         }
-
-        public List<Employee> Get(int id)
+        
+        public Employee Get(int id)
         {
             var ops = new EmployeeDirectoryOperations();
-            var response = ops.GetEmpByDptID(id);
-            var list = response.Data;
-            
-            return list;
+            var employee = ops.GetEmpById(id);
+            return employee;
         }
 
         public void Delete(int id)

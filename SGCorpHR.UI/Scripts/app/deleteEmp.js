@@ -1,10 +1,11 @@
-﻿
-function deleteDpt() {
+﻿function deleteEmp() {
     var id = $(':selected').val();
-    var dptName = $(':selected').text();
+    var empName = $(':selected').text();
+    
+
 
     $.ajax({
-        url: uri+id,
+        url: uri + id,
         dataType: "json",
         type: "DELETE",
         data: JSON.stringify({ id: 20 }),
@@ -13,8 +14,8 @@ function deleteDpt() {
         cache: false,
         success: function (data, status, xhr) {
             $('.actionMsg p').remove();
-            loadDepartmentNames();
-            $(showSuccessMessage(dptName,"deleted")).appendTo($('.actionMsg'));
+            loadEmployeeNames();
+            $(showEmpSuccessMessage(empName, "deleted")).appendTo($('.actionMsg'));
 
         },
         error: function (xhr) {

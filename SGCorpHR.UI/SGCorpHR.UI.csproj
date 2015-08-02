@@ -104,8 +104,14 @@
     <Content Include="Image\swg_logo-white.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\createDepartment.js" />
     <Content Include="Scripts\app\deleteDepartment.js" />
+    <Content Include="Scripts\app\deleteEmp.js" />
+    <Content Include="Scripts\app\displayAllEmp.js" />
+    <Content Include="Scripts\app\editEmp.js" />
+    <Content Include="Scripts\app\loadAllDpts.js" />
+    <Content Include="Scripts\app\loadEmpsDropDown.js" />
     <Content Include="Scripts\app\updateDepartment.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -131,7 +137,9 @@
     <Compile Include="Controllers\DepartmentManagementController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmployeeDirectoryController.cs" />
+    <Compile Include="Controllers\EmployeeManagementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageEmployeesController.cs" />
     <Compile Include="Controllers\PolicyDocumentsController.cs" />
     <Compile Include="Controllers\ResumesController.cs" />
     <Compile Include="Controllers\TimeTrackerController.cs" />
@@ -174,6 +182,9 @@
     <Content Include="Views\DepartmentManagement\Index.cshtml" />
     <Content Include="Views\DepartmentManagement\_CreateDepartment.cshtml" />
     <Content Include="Views\DepartmentManagement\_UpdateDepartment.cshtml" />
+    <Content Include="Views\ManageEmployees\Index.cshtml" />
+    <Content Include="Views\ManageEmployees\_CreateEmployee.cshtml" />
+    <Content Include="Views\ManageEmployees\_EditEmployee.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -185,7 +196,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="PolicyDocuments\DressCode\" />
     <Folder Include="Resumes\" />
-    <Folder Include="Views\Department\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SGCorpHR.BLL\SGCorpHR.BLL.csproj">

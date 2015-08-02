@@ -35,9 +35,6 @@ C:\Users\Apprentice\Desktop\GitHub\JacobSaliga\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\b
 C:\Users\Apprentice\Desktop\GitHub\JacobSaliga\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\obj\Debug\SGCorpHR.UI.csprojResolveAssemblyReference.cache
 C:\Users\Apprentice\Desktop\GitHub\JacobSaliga\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\obj\Debug\SGCorpHR.UI.dll
 C:\Users\Apprentice\Desktop\GitHub\JacobSaliga\SGCorpHRV2\SGCorpHR\SGCorpHR.UI\obj\Debug\SGCorpHR.UI.pdb
-C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.UI\obj\Debug\SGCorpHR.UI.csprojResolveAssemblyReference.cache
-C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.UI\obj\Debug\SGCorpHR.UI.dll
-C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.UI\obj\Debug\SGCorpHR.UI.pdb
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.UI\bin\Image\swg_logo-white.png
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.UI\bin\Suggestions\Suggestions.txt
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.UI\bin\SGCorpHR.UI.dll.config
@@ -72,3 +69,6 @@ C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.UI\bin\System.Web.Mvc.xml
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.UI\bin\SGCorpHR.DATA.pdb
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.UI\bin\Dapper.pdb
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.UI\bin\Dapper.xml
+C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.UI\obj\Debug\SGCorpHR.UI.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.UI\obj\Debug\SGCorpHR.UI.dll
+C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.UI\obj\Debug\SGCorpHR.UI.pdb

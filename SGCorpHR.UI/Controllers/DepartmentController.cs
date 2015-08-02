@@ -29,14 +29,15 @@ namespace SGCorpHR.UI.Controllers
 
         // POST api/<controller>
 
-        public HttpResponseMessage Post(string departmentName)
+        public HttpResponseMessage Post(Departments department)
         {
+
             var ops = new DepartmentOperations();
-            ops.CreateDepartment(departmentName);
-            var opsResponse = ops.GetDptIdByName(departmentName);
+            ops.CreateDepartment(department.DepartmentName);
+            var opsResponse = ops.GetDptIdByName(department.DepartmentName);
             int dptId = opsResponse.Data;
 
-            var response = Request.CreateResponse(HttpStatusCode.Created, departmentName);
+            var response = Request.CreateResponse(HttpStatusCode.Created, department.DepartmentName);
 
             string uri = Url.Link("DefaultApi", new { id = dptId });
             response.Headers.Location = new Uri(uri);

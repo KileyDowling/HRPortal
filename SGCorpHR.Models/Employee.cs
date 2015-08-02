@@ -16,6 +16,7 @@ namespace SGCorpHR.Models
         public string ManagerName { get; set; }
         public string State { get; set; }
         public string Status { get; set; }
+        public int LocationID { get; set; }
         public string FormattedHireDate
         {
             get

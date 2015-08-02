@@ -68,5 +68,24 @@ namespace SGCorpHR.BLL
             return response;
         }
 
+        public Employee GetEmpById(int id)
+        {
+            var repo = new EmployeeDirectoryRepository();
+            var employee = repo.GetEmpById(id);
+            return employee;
+        }
+
+        public void DeleteEmpById(int id)
+        {
+            var ops = new EmployeeDirectoryRepository();
+            ops.DeleteEmp(id);
+        }
+
+        public void UpdateEmployee(Employee employee)
+        {
+            var repo = new EmployeeDirectoryRepository();
+            repo.UpdateEmp(employee);
+        }
+
     }
 }
