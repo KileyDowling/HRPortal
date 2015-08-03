@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Search for Employee(s)";
+}
+
+<div ng-app="demoApp" ng-controller="mainController">
+    <div class="row">
+        <div class="col-xs-6">
+            <h4>Search for Employee(s)</h4>
+            <div class="form-group">
+                <input type="text" ng-model="departmentFilter" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <table id="employees" class="table">
+            <thead>
+                <tr>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Hire Date</th>
+                    <th>Manager Name</th>
+                    <th>Department Name</th>
+                    <th>Location Name</th>
+                    <th>Status</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | filter:departmentFilter | orderBy: 'LastName'" ng-cloak>
+                    <td> {{employee.LastName}} </td>
+                    <td> {{employee.FirstName}}</td>
+                    <td> {{employee.FormattedHireDate}} </td>
+                    <td> {{employee.ManagerName}}</td>
+                    <td> {{employee.Department.DepartmentName}} </td>
+                    <td> {{employee.State}}</td>
+                    <td> {{employee.Status}}</td>
+
+</tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/angular.min.js"> </script>
+    <script src="~/Scripts/app/myApp.js"> </script>
+}
+
+
+
+

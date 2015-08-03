@@ -105,6 +105,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\myApp.js" />
     <Content Include="Scripts\app\createDepartment.js" />
     <Content Include="Scripts\app\deleteDepartment.js" />
     <Content Include="Scripts\app\deleteEmp.js" />
@@ -185,6 +186,7 @@
     <Content Include="Views\ManageEmployees\Index.cshtml" />
     <Content Include="Views\ManageEmployees\_CreateEmployee.cshtml" />
     <Content Include="Views\ManageEmployees\_EditEmployee.cshtml" />
+    <Content Include="Views\Employee\Filter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

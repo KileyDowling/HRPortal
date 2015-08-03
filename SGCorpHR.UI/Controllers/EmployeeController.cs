@@ -27,6 +27,11 @@ namespace SGCorpHR.UI.Controllers
             return View();
         }
 
+        public ActionResult Filter()
+        {
+            return View();
+        }
+
 
     }
 }
