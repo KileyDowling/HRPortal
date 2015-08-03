@@ -90,13 +90,14 @@ namespace SGCorpHR.DATA
            {
                var p = new DynamicParameters();
               
-               p.Add("@firstName,", updatedEmployee.FirstName);
+               p.Add("@firstName", updatedEmployee.FirstName);
                p.Add("@lastName", updatedEmployee.LastName);
                p.Add("@locationId", updatedEmployee.LocationID);
                p.Add("@managerId", 11);
                p.Add("@status", updatedEmployee.Status);
                p.Add("@deptId", updatedEmployee.Department.DepartmentID);
                p.Add("@empId", updatedEmployee.EmpID);
+               p.Add("@hireDate", updatedEmployee.HireDate);
 
                cn.Query("UpdateEmployee", p, commandType: CommandType.StoredProcedure);
            }

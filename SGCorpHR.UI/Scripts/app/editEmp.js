@@ -1,11 +1,12 @@
 ﻿function editEmp() {
-    var uri = 'api/EmployeeManagement/';
+    var uri = '/api/EmployeeManagement/';
 
    
     var id = $(':selected').val();
     var empName = $(':selected').text();
 
     function loadSingleEmp(id) {
+
         $.getJSON(uri + id)
             .success(function (data) {
                 $("#updatedFirstName").val(data.FirstName);
@@ -13,6 +14,9 @@
                 $('#updatedLocationID').val(data.LocationID);
                 $('#updatedStatus').val(data.Status);
                 $('#updatedDepartmentID').val(data.Department.DepartmentID);
+                $('#hiredate').val(data.HireDate);
+                $('#formattedhiredate').val(data.FormattedHireDate);
+
             });
     }
 
@@ -25,8 +29,10 @@
         employee.LastName = $('#updatedLastName').val();
         employee.LocationID = $('#updatedLocationID').val();
         employee.Status = $('#updatedStatus').val();
+        employee.Department = {};
         employee.Department.DepartmentID = $('#updatedDepartmentID').val();
         employee.EmpID = id;
+        employee.HireDate = $('#hiredate').val();
 
         $.ajax({
             url: uri,
@@ -37,7 +43,7 @@
                 $('#updateEmptModal').modal('hide');
                 $('.actionMsg p').remove();
                 loadEmployeeNames();
-                $(showSuccessMessage(empName, "updated to " + employee.FirstName + ' ' + employee.LastName)).appendTo($('.actionMsg'));
+                $(showEmpSuccessMessage(employee.FirstName + ' ' + employee.LastName, "updated")).appendTo($('.actionMsg'));
 
             },
             error: function (jqXhr, status, err) {
