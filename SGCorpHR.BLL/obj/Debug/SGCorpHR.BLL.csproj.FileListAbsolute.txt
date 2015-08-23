@@ -22,3 +22,15 @@ C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.BLL\bin\Debug\Dapper.xml
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.BLL\obj\Debug\SGCorpHR.BLL.csprojResolveAssemblyReference.cache
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.BLL\obj\Debug\SGCorpHR.BLL.dll
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.BLL\obj\Debug\SGCorpHR.BLL.pdb
+\\psf\Home\Desktop\hrportal\SGCorpHR.BLL\bin\Debug\SGCorpHR.BLL.dll
+\\psf\Home\Desktop\hrportal\SGCorpHR.BLL\bin\Debug\SGCorpHR.BLL.pdb
+\\psf\Home\Desktop\hrportal\SGCorpHR.BLL\bin\Debug\SGCorpHR.DATA.dll
+\\psf\Home\Desktop\hrportal\SGCorpHR.BLL\bin\Debug\SGCorpHR.Models.dll
+\\psf\Home\Desktop\hrportal\SGCorpHR.BLL\bin\Debug\Dapper.dll
+\\psf\Home\Desktop\hrportal\SGCorpHR.BLL\bin\Debug\SGCorpHR.DATA.pdb
+\\psf\Home\Desktop\hrportal\SGCorpHR.BLL\bin\Debug\SGCorpHR.Models.pdb
+\\psf\Home\Desktop\hrportal\SGCorpHR.BLL\bin\Debug\Dapper.pdb
+\\psf\Home\Desktop\hrportal\SGCorpHR.BLL\bin\Debug\Dapper.xml
+\\psf\Home\Desktop\hrportal\SGCorpHR.BLL\obj\Debug\SGCorpHR.BLL.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\hrportal\SGCorpHR.BLL\obj\Debug\SGCorpHR.BLL.dll
+\\psf\Home\Desktop\hrportal\SGCorpHR.BLL\obj\Debug\SGCorpHR.BLL.pdb

@@ -24,9 +24,6 @@ namespace SGCorpHR.BLL
             repo.SubmitPtoRequest(pto);
         }
 
-
-
-
         public Response<List<PaidTimeOff>> ViewAllPtoRequests()
         {
             Response<List<PaidTimeOff>> response = new Response<List<PaidTimeOff>>();

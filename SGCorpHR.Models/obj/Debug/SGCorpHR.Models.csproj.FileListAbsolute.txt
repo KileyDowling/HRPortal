@@ -7,3 +7,8 @@ C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.Models\bin\Debug\SGCorpHR.Models.d
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.Models\bin\Debug\SGCorpHR.Models.pdb
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.Models\obj\Debug\SGCorpHR.Models.dll
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.Models\obj\Debug\SGCorpHR.Models.pdb
+\\psf\Home\Desktop\hrportal\SGCorpHR.Models\bin\Debug\SGCorpHR.Models.dll
+\\psf\Home\Desktop\hrportal\SGCorpHR.Models\bin\Debug\SGCorpHR.Models.pdb
+\\psf\Home\Desktop\hrportal\SGCorpHR.Models\obj\Debug\SGCorpHR.Models.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\hrportal\SGCorpHR.Models\obj\Debug\SGCorpHR.Models.dll
+\\psf\Home\Desktop\hrportal\SGCorpHR.Models\obj\Debug\SGCorpHR.Models.pdb

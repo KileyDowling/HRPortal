@@ -11,17 +11,17 @@
 <div>
 
     @Html.HiddenFor(m => m.Data.SelectedEmployee.EmpID, Model.Data.SelectedEmployee.EmpID)
-    <label>Employee ID</label>
-    <p>@Model.Data.SelectedEmployee.EmpID</p> <br/>
+    <label>Employee ID: </label>
+    @Model.Data.SelectedEmployee.EmpID <br/>
 
-    <label>Employee Name</label>
-    <p>@Model.Data.SelectedEmployee.FirstName @Model.Data.SelectedEmployee.LastName</p> <br/>
+    <label>Employee Name: </label>
+    @Model.Data.SelectedEmployee.FirstName @Model.Data.SelectedEmployee.LastName<br/>
 
-    <label>Employee Hire Date</label>
-    <p>@Model.Data.SelectedEmployee.FormattedHireDate</p> <br/>
+    <label>Employee Hire Date: </label>
+    @Model.Data.SelectedEmployee.FormattedHireDate<br/>
 
-    <label>Total Hours To Date</label>
-    <p>@Model.Data.TotalHoursWorked</p> <br/>
+    <label>Total Hours To Date: </label>
+    @Model.Data.TotalHoursWorked<br/>
 </div>
 @if (Model.Data.AllTimesheets != null)
 {
@@ -49,14 +49,14 @@
             <tr>
                 <td>@ts.FormattedDateOfTimesheet</td>
                 <td>@ts.TotalHoursByDay</td>
-                <td>@ts.EntryType</td>
-                <td></td>
+                <td>@ts.EntryTypeName</td>
+                <td>N/A</td>
                 <td>
                     <form action="/TimeTracker/DeleteTimesheet" method="Post">
                         <input type="hidden" name="TimesheetId" id="TimesheetId" value="@ts.TimesheetId"/>
                         <input type="hidden" name="EmpId" id="EmpId" value="@ts.EmpId"/>
 
-                        <button>Delete</button>
+                        <button class="btn btn-danger">Delete</button>
                     </form>
                 </td>
             </tr>
@@ -68,7 +68,7 @@
                 <tr>
                     <td>@pt.Date.ToShortDateString()</td>
                     <td>@pt.HoursRequested</td>
-                    <td>@pt.EntryType</td>
+                    <td>@pt.EntryTypeName</td>
                     <td>@pt.PtoStatus @if (pt.ReasonRejected != "N/A")
                                       {
                                           @pt.ReasonRejected

@@ -18,3 +18,13 @@ C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.DATA\bin\Debug\Dapper.xml
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.DATA\obj\Debug\SGCorpHR.DATA.csprojResolveAssemblyReference.cache
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.DATA\obj\Debug\SGCorpHR.DATA.dll
 C:\Users\Apprentice\Desktop\HRPortal\SGCorpHR.DATA\obj\Debug\SGCorpHR.DATA.pdb
+\\psf\Home\Desktop\hrportal\SGCorpHR.DATA\bin\Debug\SGCorpHR.DATA.dll
+\\psf\Home\Desktop\hrportal\SGCorpHR.DATA\bin\Debug\SGCorpHR.DATA.pdb
+\\psf\Home\Desktop\hrportal\SGCorpHR.DATA\bin\Debug\Dapper.dll
+\\psf\Home\Desktop\hrportal\SGCorpHR.DATA\bin\Debug\SGCorpHR.Models.dll
+\\psf\Home\Desktop\hrportal\SGCorpHR.DATA\bin\Debug\SGCorpHR.Models.pdb
+\\psf\Home\Desktop\hrportal\SGCorpHR.DATA\bin\Debug\Dapper.pdb
+\\psf\Home\Desktop\hrportal\SGCorpHR.DATA\bin\Debug\Dapper.xml
+\\psf\Home\Desktop\hrportal\SGCorpHR.DATA\obj\Debug\SGCorpHR.DATA.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\hrportal\SGCorpHR.DATA\obj\Debug\SGCorpHR.DATA.dll
+\\psf\Home\Desktop\hrportal\SGCorpHR.DATA\obj\Debug\SGCorpHR.DATA.pdb

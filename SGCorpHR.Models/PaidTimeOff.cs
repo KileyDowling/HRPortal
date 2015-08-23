@@ -15,6 +15,6 @@ namespace SGCorpHR.Models
         public DateTime Date { get; set; }
         public string ReasonRejected { get; set; }
         public int ManagerID { get; set; }
-        public string EntryType { get; set; }
+        public string EntryTypeName { get; set; }
     }
 }

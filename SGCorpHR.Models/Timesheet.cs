@@ -33,6 +33,6 @@ namespace SGCorpHR.Models
             }
         }
         public int PtoRequestID { get; set; }
-        public string EntryType { get; set; }
+        public string EntryTypeName { get; set; }
     }
 }
